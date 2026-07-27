@@ -1,0 +1,44 @@
+[
+  {
+    "id": "home",
+    "label": "Home",
+    "href": "#home",
+    "order": 1,
+    "isVisible": true
+  },
+  {
+    "id": "about",
+    "label": "About",
+    "href": "#about",
+    "order": 2,
+    "isVisible": true
+  },
+  {
+    "id": "projects",
+    "label": "Projects",
+    "href": "#projects",
+    "order": 3,
+    "isVisible": true
+  },
+  {
+    "id": "skills",
+    "label": "Skills",
+    "href": "#skills",
+    "order": 4,
+    "isVisible": true
+  },
+  {
+    "id": "experience",
+    "label": "Experience",
+    "href": "#experience",
+    "order": 5,
+    "isVisible": true
+  },
+  {
+    "id": "contact",
+    "label": "Contact",
+    "href": "#contact",
+    "order": 6,
+    "isVisible": true
+  }
+]

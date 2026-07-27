@@ -1,0 +1,37 @@
+[
+  {
+    "id": "github",
+    "name": "GitHub",
+    "url": "https://github.com/arjun-kb",
+    "icon": "Github",
+    "username": "@arjun-kb"
+  },
+  {
+    "id": "linkedin",
+    "name": "LinkedIn",
+    "url": "https://linkedin.com/in/arjun-kb",
+    "icon": "Linkedin",
+    "username": "arjun-kb"
+  },
+  {
+    "id": "twitter",
+    "name": "Twitter / X",
+    "url": "https://x.com/arjun_kb",
+    "icon": "Twitter",
+    "username": "@arjun_kb"
+  },
+  {
+    "id": "email",
+    "name": "Email",
+    "url": "mailto:arjun.kb.dev@gmail.com",
+    "icon": "Mail",
+    "username": "arjun.kb.dev@gmail.com"
+  },
+  {
+    "id": "phone",
+    "name": "Phone",
+    "url": "tel:+919876543210",
+    "icon": "Phone",
+    "username": "+91 98765 43210"
+  }
+]

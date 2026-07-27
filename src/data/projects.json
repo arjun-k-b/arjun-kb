@@ -1,0 +1,80 @@
+[
+  {
+    "id": "proj-1",
+    "title": "Aether AI Analytics Engine",
+    "description": "Real-time stream processing platform with AI-driven analytics, custom dashboard visualization, and micro-frontend architecture.",
+    "longDescription": "A high-performance analytics platform built for enterprise metric tracking. Uses Next.js App Router with Server Sent Events for live telemetry data streams, coupled with custom canvas rendering for 60fps graph animations.",
+    "image": "/images/hero-portrait.jpg",
+    "category": "Full Stack",
+    "technologies": ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Node.js", "Redis", "WebSockets"],
+    "githubUrl": "https://github.com/arjun-kb/aether-ai-analytics",
+    "liveUrl": "https://aether-analytics.demo",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "id": "proj-2",
+    "title": "SAP S/4HANA Cloud Integration Gateway",
+    "description": "Enterprise cloud connector seamlessly bridging SAP S/4HANA ERP backends with custom React frontend web applications.",
+    "longDescription": "Developed custom OData v4 APIs, SAP BTP middleware service layer, and a high-availability queue processing engine handling 100,000+ daily financial transactions across global hubs.",
+    "image": "/images/hero-portrait.jpg",
+    "category": "SAP",
+    "technologies": ["SAP S/4HANA", "SAP BTP", "OData v4", "ABAP RESTful", "Node.js", "TypeScript"],
+    "githubUrl": "https://github.com/arjun-kb/sap-cloud-gateway",
+    "liveUrl": "https://sap-gateway-demo.net",
+    "featured": true,
+    "order": 2
+  },
+  {
+    "id": "proj-3",
+    "title": "Vortex Design System & Component Studio",
+    "description": "Accessible, glassmorphic UI library with dark mode primitives, fluid typography, and dynamic motion presets.",
+    "longDescription": "A unified component design system adopted by 12 internal feature teams. Built with Tailwind CSS v4, Radix primitives, and Framer Motion for zero-layout-shift UI interactions.",
+    "image": "/images/hero-portrait.jpg",
+    "category": "Frontend",
+    "technologies": ["React 19", "TypeScript", "Tailwind CSS", "Framer Motion", "Storybook", "npm"],
+    "githubUrl": "https://github.com/arjun-kb/vortex-ui-system",
+    "liveUrl": "https://vortex-ui.dev",
+    "featured": true,
+    "order": 3
+  },
+  {
+    "id": "proj-4",
+    "title": "OmniCloud Kubernetes Monitor",
+    "description": "Multi-cluster Kubernetes management portal with cluster topology mapping and automated anomaly detection.",
+    "longDescription": "Monitors multi-cloud deployment clusters across AWS, GCP, and Azure. Provides interactive 3D topology visuals and automated incident resolution workflows.",
+    "image": "/images/hero-portrait.jpg",
+    "category": "Cloud",
+    "technologies": ["Go", "Kubernetes", "Next.js", "Docker", "Prometheus", "Tailwind CSS"],
+    "githubUrl": "https://github.com/arjun-kb/omnicloud-monitor",
+    "liveUrl": "https://omnicloud-k8s.io",
+    "featured": false,
+    "order": 4
+  },
+  {
+    "id": "proj-5",
+    "title": "Neuron Commerce OS",
+    "description": "Sub-second headless e-commerce storefront with localized pricing, dynamic inventory sync, and AI product recommendations.",
+    "longDescription": "Built for high-volume retail traffic with server-side rendering caching strategies, GraphQL API mesh, and stripe terminal payments integration.",
+    "image": "/images/hero-portrait.jpg",
+    "category": "Full Stack",
+    "technologies": ["Next.js", "GraphQL", "Stripe", "PostgreSQL", "Prisma", "Tailwind CSS"],
+    "githubUrl": "https://github.com/arjun-kb/neuron-commerce",
+    "liveUrl": "https://neuron-store.com",
+    "featured": false,
+    "order": 5
+  },
+  {
+    "id": "proj-6",
+    "title": "SAP Fiori Smart Supply Chain App",
+    "description": "Custom SAP Fiori/SAPUI5 application optimizing global supply chain logistics and real-time inventory tracking.",
+    "longDescription": "Streamlined warehouse operations by 40% using SAP Fiori Elements, custom SAPUI5 controls, and offline-first PWA sync capabilities.",
+    "image": "/images/hero-portrait.jpg",
+    "category": "SAP",
+    "technologies": ["SAP Fiori", "SAPUI5", "OData", "ABAP", "SAP HANA"],
+    "githubUrl": "https://github.com/arjun-kb/sap-fiori-supplychain",
+    "liveUrl": "https://fiori-supplychain.demo",
+    "featured": false,
+    "order": 6
+  }
+]

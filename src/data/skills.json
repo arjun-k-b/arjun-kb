@@ -1,0 +1,75 @@
+[
+  {
+    "id": "frontend",
+    "category": "Frontend",
+    "description": "Building pixel-perfect, accessible, and ultra-responsive web user experiences.",
+    "skills": [
+      { "name": "React 19", "icon": "Atom", "level": 95, "experience": "6+ years", "featured": true },
+      { "name": "Next.js 15", "icon": "Layers", "level": 92, "experience": "5 years", "featured": true },
+      { "name": "TypeScript", "icon": "Code", "level": 94, "experience": "6 years", "featured": true },
+      { "name": "Tailwind CSS", "icon": "Palette", "level": 96, "experience": "5 years", "featured": true },
+      { "name": "Framer Motion", "icon": "Sparkles", "level": 90, "experience": "4 years", "featured": true },
+      { "name": "HTML5 / CSS3", "icon": "Globe", "level": 98, "experience": "7 years" },
+      { "name": "Redux Toolkit / Zustand", "icon": "Cpu", "level": 88, "experience": "5 years" }
+    ]
+  },
+  {
+    "id": "backend",
+    "category": "Backend",
+    "description": "Architecting resilient APIs, event-driven services, and high-performance server logic.",
+    "skills": [
+      { "name": "Node.js", "icon": "Server", "level": 90, "experience": "6 years", "featured": true },
+      { "name": "Express / NestJS", "icon": "Box", "level": 88, "experience": "5 years" },
+      { "name": "RESTful & GraphQL APIs", "icon": "Network", "level": 92, "experience": "6 years", "featured": true },
+      { "name": "Python", "icon": "Terminal", "level": 84, "experience": "4 years" },
+      { "name": "Microservices", "icon": "Boxes", "level": 86, "experience": "4 years" }
+    ]
+  },
+  {
+    "id": "sap",
+    "category": "SAP",
+    "description": "Enterprise ERP solutions, S/4HANA extensions, ABAP RESTful programming, and BTP.",
+    "skills": [
+      { "name": "SAP ABAP / RAP", "icon": "Workflow", "level": 92, "experience": "5+ years", "featured": true },
+      { "name": "SAP S/4HANA", "icon": "Database", "level": 90, "experience": "5 years", "featured": true },
+      { "name": "SAP Fiori / SAPUI5", "icon": "Layout", "level": 88, "experience": "4 years", "featured": true },
+      { "name": "SAP BTP Integration", "icon": "Cloud", "level": 86, "experience": "4 years" },
+      { "name": "OData v2 / v4 Services", "icon": "Share2", "level": 94, "experience": "5 years" }
+    ]
+  },
+  {
+    "id": "database",
+    "category": "Database",
+    "description": "Relational, columnar, and document databases optimized for high read/write throughput.",
+    "skills": [
+      { "name": "PostgreSQL", "icon": "Database", "level": 90, "experience": "6 years", "featured": true },
+      { "name": "SAP HANA", "icon": "HardDrive", "level": 88, "experience": "5 years" },
+      { "name": "MongoDB", "icon": "FileCode", "level": 85, "experience": "4 years" },
+      { "name": "Redis", "icon": "Zap", "level": 88, "experience": "4 years" },
+      { "name": "Prisma / Drizzle ORM", "icon": "Grid", "level": 90, "experience": "4 years" }
+    ]
+  },
+  {
+    "id": "cloud",
+    "category": "Cloud",
+    "description": "Deploying scalable infrastructure with automated CI/CD and container orchestration.",
+    "skills": [
+      { "name": "AWS (S3, EC2, Lambda)", "icon": "Cloud", "level": 85, "experience": "4 years", "featured": true },
+      { "name": "Vercel / Cloudflare", "icon": "Zap", "level": 94, "experience": "5 years" },
+      { "name": "Docker & Containers", "icon": "Package", "level": 88, "experience": "5 years" },
+      { "name": "GitHub Actions CI/CD", "icon": "GitBranch", "level": 90, "experience": "5 years" }
+    ]
+  },
+  {
+    "id": "tools",
+    "category": "Tools",
+    "description": "Essential development environments, code quality tooling, and design workflow integrations.",
+    "skills": [
+      { "name": "Git & GitHub", "icon": "GitPullRequest", "level": 96, "experience": "7 years", "featured": true },
+      { "name": "VS Code / SAP ADT", "icon": "Code2", "level": 95, "experience": "7 years" },
+      { "name": "Postman / Bruno", "icon": "Send", "level": 92, "experience": "6 years" },
+      { "name": "Figma to Code", "icon": "Figma", "level": 90, "experience": "5 years" },
+      { "name": "Jest / Vitest", "icon": "CheckCircle2", "level": 86, "experience": "4 years" }
+    ]
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "exp-1",
+    "company": "Enterprise Tech Solutions Inc.",
+    "position": "Senior Full-Stack & SAP Engineer",
+    "duration": "2023 - Present",
+    "location": "Bengaluru, India",
+    "type": "Full-time",
+    "isCurrent": true,
+    "description": "Leading full-stack web architecture and SAP S/4HANA cloud integration initiatives for Fortune 500 enterprise clients.",
+    "highlights": [
+      "Architected Next.js 15 micro-frontends integrated with SAP Cloud Platform, improving portal loading speeds by 65%.",
+      "Designed and deployed OData v4 RESTful ABAP services handling over 250,000 requests per day with 99.99% uptime.",
+      "Mentored a team of 8 full-stack engineers on modern React standards, TypeScript strict typing, and automated testing."
+    ],
+    "technologies": ["Next.js 15", "React 19", "TypeScript", "SAP ABAP RAP", "OData", "AWS", "Tailwind CSS"]
+  },
+  {
+    "id": "exp-2",
+    "company": "Apex Software Labs",
+    "position": "Full-Stack Software Engineer",
+    "duration": "2021 - 2023",
+    "location": "Bengaluru, India",
+    "type": "Full-time",
+    "isCurrent": false,
+    "description": "Developed high-throughput SaaS web applications and data visualization dashboards using React, Node.js, and PostgreSQL.",
+    "highlights": [
+      "Built real-time telemetry analytics dashboards using WebSockets and Framer Motion, servicing 40k active daily users.",
+      "Reduced bundle size by 42% through code-splitting, dynamic imports, and SVG optimization.",
+      "Implemented automated CI/CD pipelines with GitHub Actions reducing deployment cycles from hours to minutes."
+    ],
+    "technologies": ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Docker", "Tailwind CSS"]
+  },
+  {
+    "id": "exp-3",
+    "company": "Global SAP Services Consultancy",
+    "position": "SAP Technical Consultant",
+    "duration": "2019 - 2021",
+    "location": "Bengaluru, India",
+    "type": "Full-time",
+    "isCurrent": false,
+    "description": "Specialized in SAP ECC to S/4HANA migration, ABAP custom development, SAP Fiori applications, and RFC/BAPI integrations.",
+    "highlights": [
+      "Delivered 15+ custom SAP Fiori applications using SAPUI5 framework and SAP Gateway OData services.",
+      "Optimized legacy ABAP SQL queries resulting in 75% faster batch job execution times for month-end financial closing.",
+      "Received Best Technical Innovator award for developing automated SAP data validation tool."
+    ],
+    "technologies": ["SAP ABAP", "SAP Fiori", "SAPUI5", "SAP HANA", "OData", "JavaScript"]
+  }
+]

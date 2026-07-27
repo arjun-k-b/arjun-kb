@@ -1,0 +1,45 @@
+{
+  "name": "Arjun K B",
+  "role": "Full-Stack & SAP Software Engineer",
+  "titles": [
+    "Full-Stack Engineer",
+    "SAP ABAP Developer",
+    "React & Next.js Developer"
+  ],
+  "bio": "Building high-performance, enterprise-grade web applications and cloud integrations with precision, modern design, and robust architecture.",
+  "aboutBio": [
+    "I am a Senior Software Engineer with over 6 years of experience building mission-critical enterprise systems, scalable full-stack web applications, and SAP integrations.",
+    "Specializing in modern web technologies including Next.js 15, React 19, TypeScript, Node.js, and SAP ABAP/S4HANA, I bridge the gap between complex enterprise backends and sleek, ultra-responsive user interfaces.",
+    "Driven by design perfection, high-performance architecture, and clean code principles, I deliver solutions that elevate user experience while scaling effortlessly under heavy load."
+  ],
+  "location": "Bengaluru, India",
+  "email": "kbarjun2468@gmail.com",
+  "phone": "+91 9037660610",
+  "availability": "Available for Select Contracts & Advisory",
+  "yearsOfExperience": 6,
+  "completedProjects": 35,
+  "satisfiedClients": 24,
+  "githubUrl": "https://github.com/arjun-kb",
+  "linkedinUrl": "https://linkedin.com/in/arjun-kb",
+  "twitterUrl": "https://x.com/arjun_kb",
+  "heroImage": "/images/hero-portrait.png",
+  "aboutImage": "/images/hero-portrait.png",
+  "resumePdf": "/resume/resume.pdf",
+  "seo": {
+    "title": "Arjun K B | Senior Full-Stack & SAP Software Engineer",
+    "description": "Portfolio of Arjun K B, Senior Software Engineer specializing in Next.js, React, TypeScript, SAP ABAP/S4HANA, Node.js, and Cloud Infrastructure.",
+    "keywords": [
+      "Software Engineer",
+      "Full-Stack Developer",
+      "SAP Consultant",
+      "Next.js Developer",
+      "React Developer",
+      "TypeScript",
+      "Portfolio",
+      "Frontend Architect"
+    ],
+    "author": "Arjun K B",
+    "siteUrl": "https://arjunkb.dev",
+    "ogImage": "/images/hero-portrait.jpg"
+  }
+}

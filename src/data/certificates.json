@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cert-1",
+    "title": "SAP Certified Development Associate - ABAP with SAP NetWeaver & S/4HANA",
+    "issuer": "SAP SE",
+    "issueDate": "2022",
+    "credentialId": "SAP-CERT-884920",
+    "credentialUrl": "https://www.sap.com/training-certification.html",
+    "image": "/images/hero-portrait.jpg",
+    "skills": ["SAP ABAP", "SAP S/4HANA", "OData", "RAP Framework"]
+  },
+  {
+    "id": "cert-2",
+    "title": "AWS Certified Solutions Architect – Associate",
+    "issuer": "Amazon Web Services",
+    "issueDate": "2023",
+    "credentialId": "AWS-ASA-994012",
+    "credentialUrl": "https://aws.amazon.com/certification/",
+    "image": "/images/hero-portrait.jpg",
+    "skills": ["AWS S3", "EC2", "Lambda", "CloudFront", "IAM", "VPC"]
+  },
+  {
+    "id": "cert-3",
+    "title": "Meta Certified Front-End Developer",
+    "issuer": "Meta / Coursera",
+    "issueDate": "2021",
+    "credentialId": "META-FED-332910",
+    "credentialUrl": "https://coursera.org/verify/professional-cert/meta-frontend",
+    "image": "/images/hero-portrait.jpg",
+    "skills": ["React", "JavaScript ES6+", "HTML5/CSS3", "UX/UI Design", "Version Control"]
+  }
+]
