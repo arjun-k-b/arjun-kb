@@ -6,7 +6,9 @@ import { Menu, X, Code2, Download, ArrowUpRight } from 'lucide-react';
 import { useActiveSection } from '@/hooks/useActiveSection';
 import { Button } from '@/components/ui/Button';
 
-const navItems = [
+import { SiteSectionsVisibility } from '@/types/site';
+
+const allNavItems = [
   { id: 'hero', label: 'Home', href: '#hero' },
   { id: 'about', label: 'About', href: '#about' },
   { id: 'skills', label: 'Skills', href: '#skills' },
@@ -14,12 +16,22 @@ const navItems = [
   { id: 'projects', label: 'Projects', href: '#projects' },
   { id: 'education', label: 'Education', href: '#education' },
   { id: 'certificates', label: 'Certificates', href: '#certificates' },
+  { id: 'blog', label: 'Blog', href: '#blog' },
   { id: 'contact', label: 'Contact', href: '#contact' },
 ];
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  sections?: SiteSectionsVisibility;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navItems = allNavItems.filter((item) =>
+    sections ? sections[item.id as keyof SiteSectionsVisibility] !== false : true
+  );
+
   const activeSection = useActiveSection(navItems.map((item) => item.id));
 
   useEffect(() => {

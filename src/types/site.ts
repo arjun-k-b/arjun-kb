@@ -1,3 +1,15 @@
+export interface SiteSectionsVisibility {
+  hero?: boolean;
+  about?: boolean;
+  skills?: boolean;
+  experience?: boolean;
+  projects?: boolean;
+  education?: boolean;
+  certificates?: boolean;
+  blog?: boolean;
+  contact?: boolean;
+}
+
 export interface SiteSettings {
   name: string;
   role: string;
@@ -25,4 +37,5 @@ export interface SiteSettings {
     siteUrl: string;
     ogImage: string;
   };
+  sections?: SiteSectionsVisibility;
 }

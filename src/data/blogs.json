@@ -1,0 +1,53 @@
+[
+  {
+    "id": "blog-1",
+    "title": "Mastering Next.js 15 App Router & Server Components",
+    "description": "A deep dive into building ultra-fast React 19 web applications using Next.js 15 Server Components, streaming SSR, and optimized caching patterns.",
+    "content": "Next.js 15 and React 19 bring revolutionary performance gains to modern web development. By leveraging Server Components by default, developers can execute heavy computing on the server while delivering minimal JavaScript bundles to the browser.\n\nIn this article, we explore architectural patterns for managing client and server boundaries, optimizing data fetching with revalidation strategies, and creating dynamic user interfaces with fluid motion animations.",
+    "thumbnail": "/images/blogs/blog_nextjs_react.png",
+    "date": "Aug 04, 2026",
+    "category": "Full Stack",
+    "readTime": "5 min read",
+    "likes": 142,
+    "author": {
+      "name": "Arjun K B",
+      "avatar": "/images/hero-portrait.png"
+    },
+    "tags": ["Next.js 15", "React 19", "TypeScript", "Performance"],
+    "featured": true
+  },
+  {
+    "id": "blog-2",
+    "title": "Bridging SAP ABAP Backends with Modern React & Node.js Gateways",
+    "description": "How enterprise engineering teams can build scalable OData v4 middleware to connect SAP S/4HANA systems with real-time React web applications.",
+    "content": "Enterprise applications often require seamless communication between legacy SAP backends and modern web frontends. Utilizing ABAP RESTful Application Programming (RAP) and OData services, developers can create robust API endpoints.\n\nThis guide demonstrates how to configure SAP Business Technology Platform (BTP) destinations, secure cross-origin requests, and handle high-volume transactional workloads with resilient error queues.",
+    "thumbnail": "/images/blogs/blog_sap_abap.png",
+    "date": "Jul 28, 2026",
+    "category": "SAP & Enterprise",
+    "readTime": "7 min read",
+    "likes": 98,
+    "author": {
+      "name": "Arjun K B",
+      "avatar": "/images/hero-portrait.png"
+    },
+    "tags": ["SAP ABAP", "OData v4", "SAP BTP", "Node.js"],
+    "featured": true
+  },
+  {
+    "id": "blog-3",
+    "title": "Building Autonomous AI Workflows with TypeScript & LLMs",
+    "description": "Exploring agentic AI systems, prompt engineering pipelines, and background workflow automation using modern TypeScript tooling.",
+    "content": "Artificial Intelligence is shifting from basic conversational bots to proactive, task-executing autonomous agents. By structuring multi-step agent workflows with tools and structured outputs, developers can automate complex data processing tasks.\n\nWe dive into building resilient background queues, agent memory management, and integrating LLMs into web applications gracefully.",
+    "thumbnail": "/images/blogs/blog_ai_automation.png",
+    "date": "Jul 15, 2026",
+    "category": "AI & Automation",
+    "readTime": "6 min read",
+    "likes": 184,
+    "author": {
+      "name": "Arjun K B",
+      "avatar": "/images/hero-portrait.png"
+    },
+    "tags": ["AI", "TypeScript", "LLM", "Automation"],
+    "featured": false
+  }
+]

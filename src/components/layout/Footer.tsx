@@ -64,16 +64,32 @@ export const Footer: React.FC<FooterProps> = ({ siteSettings, socialLinks }) => 
               Quick Links
             </h4>
             <ul className="space-y-2 text-xs">
-              {['Hero', 'About', 'Skills', 'Experience', 'Projects', 'Contact'].map((link) => (
-                <li key={link}>
-                  <a
-                    href={`#${link.toLowerCase()}`}
-                    className="text-[#A1A1AA] hover:text-white transition-colors"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
+              {[
+                { name: 'Hero', key: 'hero' },
+                { name: 'About', key: 'about' },
+                { name: 'Skills', key: 'skills' },
+                { name: 'Experience', key: 'experience' },
+                { name: 'Projects', key: 'projects' },
+                { name: 'Education', key: 'education' },
+                { name: 'Certificates', key: 'certificates' },
+                { name: 'Blog', key: 'blog' },
+                { name: 'Contact', key: 'contact' },
+              ]
+                .filter((item) =>
+                  siteSettings.sections
+                    ? siteSettings.sections[item.key as keyof typeof siteSettings.sections] !== false
+                    : true
+                )
+                .map((link) => (
+                  <li key={link.key}>
+                    <a
+                      href={`#${link.key}`}
+                      className="text-[#A1A1AA] hover:text-white transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
             </ul>
           </div>
 
