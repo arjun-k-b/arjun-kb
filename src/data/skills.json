@@ -40,7 +40,7 @@
       {
         "name": "Function Modules",
         "icon": "Boxes",
-        "level": 88,
+        "level": 85,
         "experience": "1+ year"
       }
     ]
@@ -53,28 +53,28 @@
       {
         "name": "Node.js",
         "icon": "Server",
-        "level": 90,
+        "level": 97,
         "experience": "2+ years",
         "featured": true
       },
       {
         "name": "Express.js",
         "icon": "Box",
-        "level": 90,
+        "level": 92,
         "experience": "2+ years",
         "featured": true
       },
       {
         "name": "REST API Development",
         "icon": "Network",
-        "level": 90,
+        "level": 95,
         "experience": "2+ years",
         "featured": true
       },
       {
         "name": "MVC Architecture",
         "icon": "Layers",
-        "level": 90,
+        "level": 98,
         "experience": "2+ years"
       },
       {
@@ -92,7 +92,7 @@
       {
         "name": "Docker",
         "icon": "Container",
-        "level": 78,
+        "level": 74,
         "experience": "Learning"
       }
     ]
@@ -105,7 +105,7 @@
       {
         "name": "JavaScript (ES6+)",
         "icon": "Code",
-        "level": 90,
+        "level": 98,
         "experience": "2+ years",
         "featured": true
       },
@@ -158,7 +158,7 @@
       {
         "name": "PostgreSQL",
         "icon": "Database",
-        "level": 82,
+        "level": 75,
         "experience": "1+ year"
       }
     ]
