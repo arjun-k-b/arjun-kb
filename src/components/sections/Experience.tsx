@@ -23,7 +23,7 @@ export const Experience: React.FC<ExperienceProps> = ({ experiences }) => {
         <SectionHeader
           badgeText="Career Journey"
           title="Work Experience"
-          subtitle="A track record of engineering leadership, high-impact enterprise projects, and technical excellence."
+          subtitle="Building practical solutions across SAP, web development, and embedded systems."
         />
 
         {/* Timeline Container */}
@@ -46,9 +46,8 @@ export const Experience: React.FC<ExperienceProps> = ({ experiences }) => {
                 <motion.div
                   key={exp.id}
                   variants={fadeIn(isEven ? 'right' : 'left', 0.2)}
-                  className={`relative flex flex-col sm:flex-row items-center ${
-                    isEven ? 'sm:flex-row-reverse' : ''
-                  }`}
+                  className={`relative flex flex-col sm:flex-row items-center ${isEven ? 'sm:flex-row-reverse' : ''
+                    }`}
                 >
                   {/* Glowing Node Dot on Timeline */}
                   <div className="absolute left-4 sm:left-1/2 top-6 -translate-x-1/2 z-10 w-6 h-6 rounded-full bg-[#0B0B12] border-2 border-[#7C3AED] flex items-center justify-center shadow-[0_0_15px_rgba(124,58,237,0.8)]">

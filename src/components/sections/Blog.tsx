@@ -77,7 +77,7 @@ export const Blog: React.FC<BlogProps> = ({ blogs }) => {
         <SectionHeader
           badgeText="Articles & Insights"
           title="Latest Blog Posts"
-          subtitle="Explore thoughts on full-stack architecture, SAP integration strategies, modern web tech, and agentic AI."
+          subtitle="Explore thoughts on SAP ABAP & Full-Stack Developer, SAP integration strategies, modern web tech, and agentic AI."
         />
 
         {/* Category Filter Tabs */}
@@ -86,11 +86,10 @@ export const Blog: React.FC<BlogProps> = ({ blogs }) => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2.5 text-xs sm:text-sm font-medium rounded-xl transition-all duration-300 cursor-pointer ${
-                activeCategory === cat
+              className={`px-5 py-2.5 text-xs sm:text-sm font-medium rounded-xl transition-all duration-300 cursor-pointer ${activeCategory === cat
                   ? 'bg-[#7C3AED] text-white shadow-[0_0_20px_rgba(124,58,237,0.5)] border border-[#7C3AED]'
                   : 'bg-white/5 text-[#A1A1AA] hover:text-white hover:bg-white/10 border border-white/10'
-              }`}
+                }`}
             >
               {cat}
             </button>
@@ -194,17 +193,15 @@ export const Blog: React.FC<BlogProps> = ({ blogs }) => {
                         <motion.button
                           whileTap={{ scale: 0.85 }}
                           onClick={(e) => handleToggleLike(e, blog.id)}
-                          className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all duration-300 cursor-pointer ${
-                            isLiked
+                          className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all duration-300 cursor-pointer ${isLiked
                               ? 'bg-rose-500/20 text-rose-400 border-rose-500/40 shadow-[0_0_15px_rgba(244,63,94,0.3)]'
                               : 'bg-white/5 text-[#A1A1AA] border-white/10 hover:text-rose-400 hover:border-rose-500/30 hover:bg-white/10'
-                          }`}
+                            }`}
                           aria-label={`Like blog post: ${blog.title}`}
                         >
                           <Heart
-                            className={`w-4 h-4 transition-all duration-300 ${
-                              isLiked ? 'fill-rose-500 text-rose-500 scale-110' : ''
-                            }`}
+                            className={`w-4 h-4 transition-all duration-300 ${isLiked ? 'fill-rose-500 text-rose-500 scale-110' : ''
+                              }`}
                           />
                           <span>{count}</span>
                         </motion.button>
@@ -326,16 +323,14 @@ export const Blog: React.FC<BlogProps> = ({ blogs }) => {
                   <motion.button
                     whileTap={{ scale: 0.85 }}
                     onClick={(e) => handleToggleLike(e, selectedBlog.id)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
-                      userLikedState[selectedBlog.id]
+                    className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold border transition-all cursor-pointer ${userLikedState[selectedBlog.id]
                         ? 'bg-rose-500/20 text-rose-400 border-rose-500/40 shadow-[0_0_15px_rgba(244,63,94,0.3)]'
                         : 'bg-white/5 text-[#A1A1AA] border-white/10 hover:text-rose-400 hover:border-rose-500/30'
-                    }`}
+                      }`}
                   >
                     <Heart
-                      className={`w-4 h-4 ${
-                        userLikedState[selectedBlog.id] ? 'fill-rose-500 text-rose-500' : ''
-                      }`}
+                      className={`w-4 h-4 ${userLikedState[selectedBlog.id] ? 'fill-rose-500 text-rose-500' : ''
+                        }`}
                     />
                     <span>{likesState[selectedBlog.id] ?? selectedBlog.likes} Likes</span>
                   </motion.button>

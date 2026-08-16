@@ -89,8 +89,8 @@ export const Hero: React.FC<HeroProps> = ({ siteSettings }) => {
                 <p className="text-xs text-[#A1A1AA]">Projects</p>
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10 backdrop-blur-sm">
-                <p className="text-2xl sm:text-3xl font-bold text-white">{siteSettings.codeQuality}%</p>
-                <p className="text-xs text-[#A1A1AA]">Code Quality</p>
+                <p className="text-2xl sm:text-3xl font-bold text-white">{siteSettings.codeQuality}+</p>
+                <p className="text-xs text-[#A1A1AA]">Core Domains</p>
               </div>
             </div>
 
