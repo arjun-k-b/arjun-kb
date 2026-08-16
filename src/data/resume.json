@@ -1,13 +1,14 @@
 {
   "name": "Arjun K B",
-  "title": "Senior Full-Stack & SAP Software Engineer",
+  "title": "SAP ABAP Developer | MERN Stack Developer",
   "fileUrl": "/resume/resume.pdf",
-  "updatedAt": "2026-07-27",
-  "summary": "Senior Software Engineer with 6+ years of experience across Next.js 15, React 19, TypeScript, SAP ABAP/S4HANA, and Cloud Infrastructure.",
+  "updatedAt": "2026-08-15",
+  "summary": "SAP ABAP Developer at Cochin Shipyard Limited with hands-on experience in developing enterprise applications using ABAP, Module Pool Programming, ALV Reports, Open SQL, and the ABAP Dictionary. Passionate about full-stack web development with the MERN stack and IoT-based solutions using ESP32, Node.js, and MongoDB.",
   "highlights": [
-    "6+ years building enterprise web apps & ERP integrations",
-    "Expertise in Next.js 15 App Router, React 19, & Tailwind CSS",
-    "SAP ABAP RAP, S/4HANA OData v4 & Fiori Specialist",
-    "Proven track record of high availability architecture & performance optimization"
+    "SAP ABAP Developer at Cochin Shipyard Limited",
+    "Experience with Module Pool Programming, ALV Reports, Open SQL, and ABAP Dictionary",
+    "Built full-stack web applications using Node.js, Express.js, MongoDB, and JavaScript",
+    "Developed an IoT-based RFID Attendance Management System using ESP32 and Node.js",
+    "Technical writer publishing SAP ABAP, Microservices, and Web Development articles on Medium"
   ]
 }

@@ -3,8 +3,7 @@
   "role": "Full-Stack Developer & SAP ABAP Developer",
   "titles": [
     "Full-Stack Developer",
-    "SAP ABAP Developer",
-    "AI Enthusiast"
+    "SAP ABAP Developer"
   ],
   "bio": "Full Stack Developer & SAP ABAP Developer passionate about building scalable web applications, enterprise solutions, and AI-powered experiences.",
   "aboutBio": [
@@ -17,8 +16,8 @@
   "phone": "+91 9037660610",
   "availability": "Available for Freelance & Full-Time Opportunities",
   "yearsOfExperience": 2,
-  "completedProjects": 0,
-  "satisfiedClients": 0,
+  "completedProjects": 10,
+  "satisfiedClients": 2,
   "githubUrl": "https://github.com/arjun-kb",
   "linkedinUrl": "https://linkedin.com/in/arjun-kb",
   "twitterUrl": "https://x.com/arjun_kb",
@@ -53,8 +52,8 @@
     "skills": true,
     "experience": true,
     "projects": true,
-    "education": false,
-    "certificates": true,
+    "education": true,
+    "certificates": false,
     "blog": true,
     "contact": true
   }

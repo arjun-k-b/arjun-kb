@@ -1,4 +1,4 @@
-export type ProjectCategory = 'All' | 'Full Stack' | 'SAP' | 'Frontend' | 'Cloud';
+export type ProjectCategory = 'All' | 'Full Stack' | 'SAP' | 'SAP ABAP' | 'Backend' | 'Embedded Systems' | string;
 
 export interface Project {
   id: string;
@@ -6,10 +6,11 @@ export interface Project {
   description: string;
   longDescription?: string;
   image: string;
-  category: ProjectCategory;
+  category: string;
   technologies: string[];
-  githubUrl: string;
-  liveUrl: string;
+  githubUrl?: string;
+  liveUrl?: string;
+  url?: string;
   featured: boolean;
   order: number;
 }

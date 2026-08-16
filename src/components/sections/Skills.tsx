@@ -80,12 +80,7 @@ export const Skills: React.FC<SkillsProps> = ({ skillCategories }) => {
 
   const categoriesList: (SkillCategoryName | 'All')[] = [
     'All',
-    'Frontend',
-    'Backend',
-    'SAP',
-    'Database',
-    'Cloud',
-    'Tools',
+    ...Array.from(new Set(skillCategories.map((c) => c.category))),
   ];
 
   const filteredCategories =

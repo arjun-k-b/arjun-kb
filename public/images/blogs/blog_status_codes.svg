@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0B12" />
+      <stop offset="50%" stop-color="#141124" />
+      <stop offset="100%" stop-color="#09080F" />
+    </linearGradient>
+    <linearGradient id="status-200" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#34D399" />
+    </linearGradient>
+    <linearGradient id="status-404" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FBBF24" />
+    </linearGradient>
+    <linearGradient id="status-500" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#F87171" />
+    </linearGradient>
+    <filter id="glow-effect" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="25" result="blur" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg-grad)" />
+
+  <!-- Background Ambient Glow -->
+  <circle cx="300" cy="337" r="250" fill="#7C3AED" opacity="0.12" filter="url(#glow-effect)" />
+  <circle cx="900" cy="337" r="220" fill="#3B82F6" opacity="0.1" filter="url(#glow-effect)" />
+
+  <!-- HTTP Network Path Lines -->
+  <path d="M 200 337 Q 600 200 1000 337" stroke="#7C3AED" stroke-width="2" fill="none" opacity="0.3" stroke-dasharray="8 8" />
+  <path d="M 200 337 Q 600 474 1000 337" stroke="#3B82F6" stroke-width="2" fill="none" opacity="0.3" stroke-dasharray="8 8" />
+
+  <!-- Status Code Badges -->
+  <!-- 200 OK Card -->
+  <g transform="translate(260, 337)">
+    <rect x="-110" y="-80" width="220" height="160" rx="20" fill="#11111B" stroke="#10B981" stroke-width="2" />
+    <text x="0" y="-15" font-family="sans-serif" font-weight="900" font-size="44" fill="url(#status-200)" text-anchor="middle">200</text>
+    <text x="0" y="25" font-family="sans-serif" font-weight="700" font-size="18" fill="#E4E4E7" text-anchor="middle">OK</text>
+    <rect x="-50" y="42" width="100" height="20" rx="10" fill="#10B981" opacity="0.2" />
+    <text x="0" y="55" font-family="sans-serif" font-weight="600" font-size="11" fill="#34D399" text-anchor="middle">Success</text>
+  </g>
+
+  <!-- 404 NOT FOUND Card -->
+  <g transform="translate(600, 337)">
+    <rect x="-130" y="-95" width="260" height="190" rx="24" fill="#161224" stroke="#7C3AED" stroke-width="3" />
+    <text x="0" y="-20" font-family="sans-serif" font-weight="900" font-size="56" fill="#C084FC" text-anchor="middle">404</text>
+    <text x="0" y="25" font-family="sans-serif" font-weight="800" font-size="20" fill="#FFFFFF" text-anchor="middle">NOT FOUND</text>
+    <text x="0" y="55" font-family="sans-serif" font-weight="600" font-size="13" fill="#A78BFA" text-anchor="middle">HTTP Client Error</text>
+  </g>
+
+  <!-- 500 SERVER ERROR Card -->
+  <g transform="translate(940, 337)">
+    <rect x="-110" y="-80" width="220" height="160" rx="20" fill="#11111B" stroke="#EF4444" stroke-width="2" />
+    <text x="0" y="-15" font-family="sans-serif" font-weight="900" font-size="44" fill="url(#status-500)" text-anchor="middle">500</text>
+    <text x="0" y="25" font-family="sans-serif" font-weight="700" font-size="18" fill="#E4E4E7" text-anchor="middle">ERROR</text>
+    <rect x="-60" y="42" width="120" height="20" rx="10" fill="#EF4444" opacity="0.2" />
+    <text x="0" y="55" font-family="sans-serif" font-weight="600" font-size="11" fill="#F87171" text-anchor="middle">Server Error</text>
+  </g>
+
+  <!-- Title Overlay Banner -->
+  <text x="600" y="90" font-family="sans-serif" font-weight="900" font-size="28" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">HTTP STATUS CODES</text>
+  <text x="600" y="125" font-family="sans-serif" font-weight="500" font-size="16" fill="#A1A1AA" text-anchor="middle">The Secret Language Between Browsers &amp; Servers</text>
+</svg>

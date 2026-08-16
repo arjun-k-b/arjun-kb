@@ -1,4 +1,12 @@
-export type SkillCategoryName = 'Frontend' | 'Backend' | 'SAP' | 'Database' | 'Cloud' | 'Tools';
+export type SkillCategoryName =
+  | 'Frontend'
+  | 'Backend'
+  | 'SAP'
+  | 'Database'
+  | 'Cloud'
+  | 'Cloud & DevOps'
+  | 'Tools'
+  | string;
 
 export interface Skill {
   name: string;
@@ -10,7 +18,7 @@ export interface Skill {
 
 export interface SkillCategory {
   id: string;
-  category: SkillCategoryName;
+  category: string;
   description: string;
   skills: Skill[];
 }

@@ -8,6 +8,7 @@ interface BadgeProps {
   variant?: 'primary' | 'accent' | 'secondary' | 'outline';
   size?: 'sm' | 'md';
   className?: string;
+  onClick?: () => void;
 }
 
 export const Badge: React.FC<BadgeProps> = ({
@@ -15,6 +16,7 @@ export const Badge: React.FC<BadgeProps> = ({
   variant = 'primary',
   size = 'md',
   className,
+  onClick,
 }) => {
   const variants = {
     primary: 'bg-white/5 text-[#A1A1AA] border border-white/10',
@@ -30,6 +32,7 @@ export const Badge: React.FC<BadgeProps> = ({
 
   return (
     <span
+      onClick={onClick}
       className={cn(
         'inline-flex items-center justify-center transition-colors duration-200',
         variants[variant],

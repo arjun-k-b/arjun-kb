@@ -1,50 +1,74 @@
 [
   {
     "id": "exp-1",
-    "company": "Enterprise Tech Solutions Inc.",
-    "position": "Senior Full-Stack & SAP Engineer",
-    "duration": "2023 - Present",
-    "location": "Bengaluru, India",
+    "company": "Cochin Shipyard Limited",
+    "position": "SAP ABAP Developer Trainee",
+    "duration": "2026 - Present",
+    "location": "Kochi, Kerala, India",
     "type": "Full-time",
     "isCurrent": true,
-    "description": "Leading full-stack web architecture and SAP S/4HANA cloud integration initiatives for Fortune 500 enterprise clients.",
+    "description": "Working as a SAP ABAP Developer Trainee, developing and maintaining custom SAP applications, reports, ALV reports, module pool programs, and database objects to support enterprise business processes.",
     "highlights": [
-      "Architected Next.js 15 micro-frontends integrated with SAP Cloud Platform, improving portal loading speeds by 65%.",
-      "Designed and deployed OData v4 RESTful ABAP services handling over 250,000 requests per day with 99.99% uptime.",
-      "Mentored a team of 8 full-stack engineers on modern React standards, TypeScript strict typing, and automated testing."
+      "Developed custom ABAP reports and interactive ALV reports for business requirements.",
+      "Built Module Pool applications with custom screens, subscreens, tab strips, and user interactions.",
+      "Designed and maintained database tables, structures, search helps, and lock objects using the ABAP Dictionary.",
+      "Optimized Open SQL queries and implemented efficient data retrieval techniques.",
+      "Worked with internal tables, function modules, enhancements, and debugging to resolve production issues.",
+      "Collaborated with functional consultants to analyze business requirements and deliver SAP solutions."
     ],
-    "technologies": ["Next.js 15", "React 19", "TypeScript", "SAP ABAP RAP", "OData", "AWS", "Tailwind CSS"]
+    "technologies": [
+      "SAP ABAP",
+      "Open SQL",
+      "Module Pool Programming",
+      "ALV Reports",
+      "ABAP Dictionary",
+      "Function Modules",
+      "SAP GUI",
+      "SAP S/4HANA"
+    ]
   },
   {
     "id": "exp-2",
-    "company": "Apex Software Labs",
-    "position": "Full-Stack Software Engineer",
-    "duration": "2021 - 2023",
-    "location": "Bengaluru, India",
-    "type": "Full-time",
+    "company": "Brototype",
+    "position": "MERN Stack Developer Trainee",
+    "duration": "2025 - 2026",
+    "location": "Kochi, Kerala, India",
+    "type": "Training",
     "isCurrent": false,
-    "description": "Developed high-throughput SaaS web applications and data visualization dashboards using React, Node.js, and PostgreSQL.",
+    "description": "Completed intensive hands-on training in full-stack web development, building scalable web applications using the MERN stack while following industry-standard development practices.",
     "highlights": [
-      "Built real-time telemetry analytics dashboards using WebSockets and Framer Motion, servicing 40k active daily users.",
-      "Reduced bundle size by 42% through code-splitting, dynamic imports, and SVG optimization.",
-      "Implemented automated CI/CD pipelines with GitHub Actions reducing deployment cycles from hours to minutes."
+      "Developed full-stack web applications using Node.js, Express.js, MongoDB, EJS, HTML, CSS, and JavaScript.",
+      "Built an RFID-based Attendance Management System integrating ESP32 hardware with a Node.js backend and MongoDB.",
+      "Implemented user authentication, session management, CRUD operations, and RESTful APIs.",
+      "Worked with Git and GitHub for version control, collaborative development, and project management.",
+      "Applied MVC architecture, responsive UI design, and database optimization techniques in multiple projects."
     ],
-    "technologies": ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Docker", "Tailwind CSS"]
-  },
-  {
-    "id": "exp-3",
-    "company": "Global SAP Services Consultancy",
-    "position": "SAP Technical Consultant",
-    "duration": "2019 - 2021",
-    "location": "Bengaluru, India",
-    "type": "Full-time",
-    "isCurrent": false,
-    "description": "Specialized in SAP ECC to S/4HANA migration, ABAP custom development, SAP Fiori applications, and RFC/BAPI integrations.",
-    "highlights": [
-      "Delivered 15+ custom SAP Fiori applications using SAPUI5 framework and SAP Gateway OData services.",
-      "Optimized legacy ABAP SQL queries resulting in 75% faster batch job execution times for month-end financial closing.",
-      "Received Best Technical Innovator award for developing automated SAP data validation tool."
-    ],
-    "technologies": ["SAP ABAP", "SAP Fiori", "SAPUI5", "SAP HANA", "OData", "JavaScript"]
+    "technologies": [
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "HTML5",
+      "CSS3",
+      "Bootstrap",
+      "EJS",
+      "REST API",
+      "JWT Authentication",
+      "Express Session",
+      "MVC Architecture",
+      "Git",
+      "GitHub",
+      "Nodemailer",
+      "Multer",
+      "Cloudinary",
+      "ESP32",
+      "RFID (MFRC522)",
+      "Arduino IDE",
+      "JSON",
+      "Postman",
+      "VS Code",
+      "npm"
+    ]
   }
 ]

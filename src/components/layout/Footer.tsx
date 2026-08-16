@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, ArrowUp, Mail, Heart } from 'lucide-react';
-import { GithubIcon, LinkedinIcon, TwitterIcon } from '@/components/ui/Icons';
+import { GithubIcon, LinkedinIcon, TwitterIcon, InstagramIcon, MediumIcon } from '@/components/ui/Icons';
 import { SocialLink } from '@/types/social';
 import { SiteSettings } from '@/types/site';
 
@@ -23,6 +23,10 @@ export const Footer: React.FC<FooterProps> = ({ siteSettings, socialLinks }) => 
         return <GithubIcon className="w-4 h-4" />;
       case 'linkedin':
         return <LinkedinIcon className="w-4 h-4" />;
+      case 'medium':
+        return <MediumIcon className="w-4 h-4" />;
+      case 'instagram':
+        return <InstagramIcon className="w-4 h-4" />;
       case 'twitter':
         return <TwitterIcon className="w-4 h-4" />;
       case 'mail':

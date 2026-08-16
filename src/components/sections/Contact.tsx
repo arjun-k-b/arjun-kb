@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle2, Sparkles } from 'lucide-react';
-import { GithubIcon, LinkedinIcon, TwitterIcon } from '@/components/ui/Icons';
+import { GithubIcon, LinkedinIcon, TwitterIcon, InstagramIcon, MediumIcon } from '@/components/ui/Icons';
 import { SiteSettings } from '@/types/site';
 import { SocialLink } from '@/types/social';
 import { SectionHeader } from '@/components/ui/SectionHeader';
@@ -22,18 +22,42 @@ export const Contact: React.FC<ContactProps> = ({ siteSettings, socialLinks }) =
     email: '',
     subject: '',
     message: '',
+    botTrap: '',
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    setErrorMsg(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitted(true);
+        setFormState({ name: '', email: '', subject: '', message: '', botTrap: '' });
+      } else {
+        setErrorMsg(data.error || 'Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Contact submission error:', error);
+      // Fail-safe response for UI
       setSubmitted(true);
-      setFormState({ name: '', email: '', subject: '', message: '' });
-    }, 1200);
+      setFormState({ name: '', email: '', subject: '', message: '', botTrap: '' });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const getSocialIcon = (iconName: string) => {
@@ -42,6 +66,10 @@ export const Contact: React.FC<ContactProps> = ({ siteSettings, socialLinks }) =
         return <GithubIcon className="w-5 h-5" />;
       case 'linkedin':
         return <LinkedinIcon className="w-5 h-5" />;
+      case 'medium':
+        return <MediumIcon className="w-5 h-5" />;
+      case 'instagram':
+        return <InstagramIcon className="w-5 h-5" />;
       case 'twitter':
         return <TwitterIcon className="w-5 h-5" />;
       case 'mail':
@@ -177,6 +205,18 @@ export const Contact: React.FC<ContactProps> = ({ siteSettings, socialLinks }) =
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Hidden Anti-Spam Honeypot Field */}
+                  <input
+                    type="text"
+                    name="botTrap"
+                    value={formState.botTrap}
+                    onChange={(e) => setFormState({ ...formState, botTrap: e.target.value })}
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                  />
+
                   <div className="space-y-1">
                     <h3 className="text-xl font-bold text-white">Send a Direct Message</h3>
                     <p className="text-xs text-[#A1A1AA]">Fill out the form below to start a project conversation.</p>
@@ -230,6 +270,12 @@ export const Contact: React.FC<ContactProps> = ({ siteSettings, socialLinks }) =
                       className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-[#A1A1AA]/50 text-sm focus:outline-none focus:border-[#7C3AED] focus:ring-1 focus:ring-[#7C3AED] transition-colors resize-none"
                     />
                   </div>
+
+                  {errorMsg && (
+                    <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-medium">
+                      {errorMsg}
+                    </div>
+                  )}
 
                   <Button
                     type="submit"

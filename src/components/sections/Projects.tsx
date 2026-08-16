@@ -19,7 +19,10 @@ interface ProjectsProps {
 export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('All');
 
-  const categories: ProjectCategory[] = ['All', 'Full Stack', 'SAP', 'Frontend', 'Cloud'];
+  const categories: ProjectCategory[] = [
+    'All',
+    ...Array.from(new Set(projects.map((p) => p.category))),
+  ];
 
   const filteredProjects =
     activeCategory === 'All'
@@ -94,7 +97,12 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 
                     {/* Category Badge */}
                     <div className="absolute top-3 right-3 z-10">
-                      <Badge variant="secondary" size="sm">
+                      <Badge
+                        variant="secondary"
+                        size="sm"
+                        className="cursor-pointer hover:bg-white/20 transition-colors"
+                        onClick={() => setActiveCategory(project.category)}
+                      >
                         {project.category}
                       </Badge>
                     </div>
@@ -120,31 +128,51 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                       ))}
                     </div>
 
-                    {/* Card Footer Links */}
-                    <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
-                      <Button
-                        asAnchor
-                        href={project.githubUrl}
-                        target="_blank"
-                        variant="ghost"
-                        size="sm"
-                        icon={<GithubIcon className="w-4 h-4" />}
-                      >
-                        Code
-                      </Button>
+                    {/* Card Footer Links - render only if links exist */}
+                    {(project.githubUrl || project.liveUrl || project.url) && (
+                      <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
+                        {project.githubUrl && (
+                          <Button
+                            asAnchor
+                            href={project.githubUrl}
+                            target="_blank"
+                            variant="ghost"
+                            size="sm"
+                            icon={<GithubIcon className="w-4 h-4" />}
+                          >
+                            Code
+                          </Button>
+                        )}
 
-                      <Button
-                        asAnchor
-                        href={project.liveUrl}
-                        target="_blank"
-                        variant="primary"
-                        size="sm"
-                        icon={<ExternalLink className="w-3.5 h-3.5" />}
-                        iconPosition="right"
-                      >
-                        Live Demo
-                      </Button>
-                    </div>
+                        {project.liveUrl && (
+                          <Button
+                            asAnchor
+                            href={project.liveUrl}
+                            target="_blank"
+                            variant="primary"
+                            size="sm"
+                            icon={<ExternalLink className="w-3.5 h-3.5" />}
+                            iconPosition="right"
+                          >
+                            Live Demo
+                          </Button>
+                        )}
+
+                        {!project.liveUrl && project.url && (
+                          <Button
+                            asAnchor
+                            href={project.url}
+                            target="_blank"
+                            variant="primary"
+                            size="sm"
+                            icon={<ExternalLink className="w-3.5 h-3.5" />}
+                            iconPosition="right"
+                          >
+                            Visit Link
+                          </Button>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </GlassCard>
               </motion.div>

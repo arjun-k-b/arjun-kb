@@ -4,7 +4,8 @@ export type BlogCategory =
   | 'SAP & Enterprise'
   | 'AI & Automation'
   | 'Web Development'
-  | 'Tutorials';
+  | 'Tutorials'
+  | string;
 
 export interface BlogAuthor {
   name: string;
@@ -18,10 +19,11 @@ export interface BlogPost {
   content: string;
   thumbnail: string;
   date: string;
-  category: BlogCategory;
+  category: string;
   readTime: string;
   likes: number;
   author: BlogAuthor;
   tags: string[];
   featured?: boolean;
+  url?: string;
 }

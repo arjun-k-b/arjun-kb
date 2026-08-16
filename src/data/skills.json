@@ -1,75 +1,334 @@
 [
   {
-    "id": "frontend",
-    "category": "Frontend",
-    "description": "Building pixel-perfect, accessible, and ultra-responsive web user experiences.",
+    "id": "sap",
+    "category": "SAP Development",
+    "description": "Developing enterprise applications using SAP ABAP and SAP S/4HANA with custom reports, Module Pool Programming, ALV Reports, Smart Forms, and database objects.",
     "skills": [
-      { "name": "React 19", "icon": "Atom", "level": 95, "experience": "6+ years", "featured": true },
-      { "name": "Next.js 15", "icon": "Layers", "level": 92, "experience": "5 years", "featured": true },
-      { "name": "TypeScript", "icon": "Code", "level": 94, "experience": "6 years", "featured": true },
-      { "name": "Tailwind CSS", "icon": "Palette", "level": 96, "experience": "5 years", "featured": true },
-      { "name": "Framer Motion", "icon": "Sparkles", "level": 90, "experience": "4 years", "featured": true },
-      { "name": "HTML5 / CSS3", "icon": "Globe", "level": 98, "experience": "7 years" },
-      { "name": "Redux Toolkit / Zustand", "icon": "Cpu", "level": 88, "experience": "5 years" }
+      {
+        "name": "SAP ABAP",
+        "icon": "Workflow",
+        "level": 92,
+        "experience": "1+ year",
+        "featured": true
+      },
+      {
+        "name": "Module Pool Programming",
+        "icon": "Layout",
+        "level": 90,
+        "experience": "1+ year",
+        "featured": true
+      },
+      {
+        "name": "ALV Reports",
+        "icon": "Table",
+        "level": 90,
+        "experience": "1+ year",
+        "featured": true
+      },
+      {
+        "name": "Open SQL",
+        "icon": "Database",
+        "level": 90,
+        "experience": "1+ year"
+      },
+      {
+        "name": "ABAP Dictionary",
+        "icon": "BookOpen",
+        "level": 88,
+        "experience": "1+ year"
+      },
+      {
+        "name": "Smart Forms",
+        "icon": "FileText",
+        "level": 82,
+        "experience": "1 year"
+      },
+      {
+        "name": "Function Modules",
+        "icon": "Boxes",
+        "level": 88,
+        "experience": "1+ year"
+      },
+      {
+        "name": "Search Helps",
+        "icon": "Search",
+        "level": 85,
+        "experience": "1+ year"
+      },
+      {
+        "name": "Lock Objects",
+        "icon": "Lock",
+        "level": 82,
+        "experience": "1 year"
+      },
+      {
+        "name": "Screen Painter",
+        "icon": "Monitor",
+        "level": 88,
+        "experience": "1+ year"
+      },
+      {
+        "name": "Menu Painter",
+        "icon": "Menu",
+        "level": 85,
+        "experience": "1+ year"
+      },
+      {
+        "name": "Debugging",
+        "icon": "Bug",
+        "level": 90,
+        "experience": "1+ year"
+      },
+      {
+        "name": "SAP S/4HANA",
+        "icon": "HardDrive",
+        "level": 80,
+        "experience": "Working"
+      }
     ]
   },
   {
     "id": "backend",
-    "category": "Backend",
-    "description": "Architecting resilient APIs, event-driven services, and high-performance server logic.",
+    "category": "Backend Development",
+    "description": "Building scalable backend applications, REST APIs, authentication systems, and server-side business logic.",
     "skills": [
-      { "name": "Node.js", "icon": "Server", "level": 90, "experience": "6 years", "featured": true },
-      { "name": "Express / NestJS", "icon": "Box", "level": 88, "experience": "5 years" },
-      { "name": "RESTful & GraphQL APIs", "icon": "Network", "level": 92, "experience": "6 years", "featured": true },
-      { "name": "Python", "icon": "Terminal", "level": 84, "experience": "4 years" },
-      { "name": "Microservices", "icon": "Boxes", "level": 86, "experience": "4 years" }
+      {
+        "name": "Node.js",
+        "icon": "Server",
+        "level": 90,
+        "experience": "2+ years",
+        "featured": true
+      },
+      {
+        "name": "Express.js",
+        "icon": "Box",
+        "level": 90,
+        "experience": "2+ years",
+        "featured": true
+      },
+      {
+        "name": "REST API Development",
+        "icon": "Network",
+        "level": 90,
+        "experience": "2+ years",
+        "featured": true
+      },
+      {
+        "name": "MVC Architecture",
+        "icon": "Layers",
+        "level": 90,
+        "experience": "2+ years"
+      },
+      {
+        "name": "JWT Authentication",
+        "icon": "Shield",
+        "level": 86,
+        "experience": "2 years"
+      },
+      {
+        "name": "Express Session",
+        "icon": "Lock",
+        "level": 86,
+        "experience": "2 years"
+      },
+      {
+        "name": "Nodemailer",
+        "icon": "Mail",
+        "level": 84,
+        "experience": "2 years"
+      },
+      {
+        "name": "Multer",
+        "icon": "Upload",
+        "level": 84,
+        "experience": "2 years"
+      },
+      {
+        "name": "Cloudinary",
+        "icon": "Cloud",
+        "level": 82,
+        "experience": "1+ year"
+      }
     ]
   },
   {
-    "id": "sap",
-    "category": "SAP",
-    "description": "Enterprise ERP solutions, S/4HANA extensions, ABAP RESTful programming, and BTP.",
+    "id": "frontend",
+    "category": "Frontend Development",
+    "description": "Creating responsive and modern web interfaces with reusable components and clean UI design.",
     "skills": [
-      { "name": "SAP ABAP / RAP", "icon": "Workflow", "level": 92, "experience": "5+ years", "featured": true },
-      { "name": "SAP S/4HANA", "icon": "Database", "level": 90, "experience": "5 years", "featured": true },
-      { "name": "SAP Fiori / SAPUI5", "icon": "Layout", "level": 88, "experience": "4 years", "featured": true },
-      { "name": "SAP BTP Integration", "icon": "Cloud", "level": 86, "experience": "4 years" },
-      { "name": "OData v2 / v4 Services", "icon": "Share2", "level": 94, "experience": "5 years" }
+      {
+        "name": "HTML5",
+        "icon": "Globe",
+        "level": 95,
+        "experience": "3+ years",
+        "featured": true
+      },
+      {
+        "name": "CSS3",
+        "icon": "Palette",
+        "level": 92,
+        "experience": "3+ years",
+        "featured": true
+      },
+      {
+        "name": "JavaScript (ES6+)",
+        "icon": "Code",
+        "level": 90,
+        "experience": "2+ years",
+        "featured": true
+      },
+      {
+        "name": "React.js",
+        "icon": "Atom",
+        "level": 82,
+        "experience": "1+ year"
+      },
+      {
+        "name": "Bootstrap",
+        "icon": "Layout",
+        "level": 95,
+        "experience": "2+ years"
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon": "Palette",
+        "level": 84,
+        "experience": "1+ year"
+      },
+      {
+        "name": "EJS",
+        "icon": "FileCode",
+        "level": 90,
+        "experience": "2+ years"
+      }
     ]
   },
   {
     "id": "database",
     "category": "Database",
-    "description": "Relational, columnar, and document databases optimized for high read/write throughput.",
+    "description": "Working with relational and NoSQL databases for web and enterprise applications.",
     "skills": [
-      { "name": "PostgreSQL", "icon": "Database", "level": 90, "experience": "6 years", "featured": true },
-      { "name": "SAP HANA", "icon": "HardDrive", "level": 88, "experience": "5 years" },
-      { "name": "MongoDB", "icon": "FileCode", "level": 85, "experience": "4 years" },
-      { "name": "Redis", "icon": "Zap", "level": 88, "experience": "4 years" },
-      { "name": "Prisma / Drizzle ORM", "icon": "Grid", "level": 90, "experience": "4 years" }
+      {
+        "name": "MongoDB",
+        "icon": "Database",
+        "level": 90,
+        "experience": "2+ years",
+        "featured": true
+      },
+      {
+        "name": "Mongoose",
+        "icon": "Database",
+        "level": 88,
+        "experience": "2 years"
+      },
+      {
+        "name": "MySQL",
+        "icon": "Database",
+        "level": 82,
+        "experience": "1+ year"
+      },
+      {
+        "name": "SAP HANA",
+        "icon": "HardDrive",
+        "level": 75,
+        "experience": "Exposure"
+      }
     ]
   },
   {
-    "id": "cloud",
-    "category": "Cloud",
-    "description": "Deploying scalable infrastructure with automated CI/CD and container orchestration.",
+    "id": "iot",
+    "category": "IoT & Embedded Systems",
+    "description": "Developing IoT solutions using ESP32, Arduino, RFID technology, and embedded programming.",
     "skills": [
-      { "name": "AWS (S3, EC2, Lambda)", "icon": "Cloud", "level": 85, "experience": "4 years", "featured": true },
-      { "name": "Vercel / Cloudflare", "icon": "Zap", "level": 94, "experience": "5 years" },
-      { "name": "Docker & Containers", "icon": "Package", "level": 88, "experience": "5 years" },
-      { "name": "GitHub Actions CI/CD", "icon": "GitBranch", "level": 90, "experience": "5 years" }
+      {
+        "name": "ESP32",
+        "icon": "Cpu",
+        "level": 90,
+        "experience": "1+ year",
+        "featured": true
+      },
+      {
+        "name": "Arduino",
+        "icon": "Microchip",
+        "level": 88,
+        "experience": "2 years"
+      },
+      {
+        "name": "RFID (MFRC522)",
+        "icon": "CreditCard",
+        "level": 90,
+        "experience": "1+ year"
+      },
+      {
+        "name": "Arduino IDE",
+        "icon": "Code2",
+        "level": 88,
+        "experience": "2 years"
+      }
     ]
   },
   {
     "id": "tools",
-    "category": "Tools",
-    "description": "Essential development environments, code quality tooling, and design workflow integrations.",
+    "category": "Tools & Platforms",
+    "description": "Modern tools used for development, collaboration, testing, design, and deployment.",
     "skills": [
-      { "name": "Git & GitHub", "icon": "GitPullRequest", "level": 96, "experience": "7 years", "featured": true },
-      { "name": "VS Code / SAP ADT", "icon": "Code2", "level": 95, "experience": "7 years" },
-      { "name": "Postman / Bruno", "icon": "Send", "level": 92, "experience": "6 years" },
-      { "name": "Figma to Code", "icon": "Figma", "level": 90, "experience": "5 years" },
-      { "name": "Jest / Vitest", "icon": "CheckCircle2", "level": 86, "experience": "4 years" }
+      {
+        "name": "Git",
+        "icon": "GitBranch",
+        "level": 92,
+        "experience": "2+ years",
+        "featured": true
+      },
+      {
+        "name": "GitHub",
+        "icon": "Github",
+        "level": 92,
+        "experience": "2+ years",
+        "featured": true
+      },
+      {
+        "name": "VS Code",
+        "icon": "Code2",
+        "level": 95,
+        "experience": "4+ years",
+        "featured": true
+      },
+      {
+        "name": "SAP GUI",
+        "icon": "Monitor",
+        "level": 90,
+        "experience": "1+ year"
+      },
+      {
+        "name": "SAP ADT (Eclipse)",
+        "icon": "Code",
+        "level": 85,
+        "experience": "1+ year"
+      },
+      {
+        "name": "Postman",
+        "icon": "Send",
+        "level": 90,
+        "experience": "2 years"
+      },
+      {
+        "name": "Figma",
+        "icon": "Figma",
+        "level": 82,
+        "experience": "1+ year"
+      },
+      {
+        "name": "Linux",
+        "icon": "Terminal",
+        "level": 82,
+        "experience": "2 years"
+      },
+      {
+        "name": "npm",
+        "icon": "Package",
+        "level": 90,
+        "experience": "2+ years"
+      }
     ]
   }
 ]
