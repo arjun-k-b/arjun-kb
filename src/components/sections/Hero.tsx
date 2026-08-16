@@ -34,7 +34,7 @@ export const Hero: React.FC<HeroProps> = ({ siteSettings }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
+
           {/* Left Text & CTA Content (7 cols on lg) */}
           <motion.div
             variants={fadeIn('right', 0.2)}
@@ -89,7 +89,7 @@ export const Hero: React.FC<HeroProps> = ({ siteSettings }) => {
                 <p className="text-xs text-[#A1A1AA]">Projects</p>
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10 backdrop-blur-sm">
-                <p className="text-2xl sm:text-3xl font-bold text-white">100%</p>
+                <p className="text-2xl sm:text-3xl font-bold text-white">{siteSettings.codeQuality}%</p>
                 <p className="text-xs text-[#A1A1AA]">Code Quality</p>
               </div>
             </div>

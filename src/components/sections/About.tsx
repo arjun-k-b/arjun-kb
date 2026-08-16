@@ -14,14 +14,6 @@ interface AboutProps {
 }
 
 export const About: React.FC<AboutProps> = ({ siteSettings }) => {
-  const highlights = [
-    'Senior Software Engineer with 6+ years of production experience',
-    'Specialist in Next.js 15, React 19, TypeScript, and modern state management',
-    'Enterprise SAP technical consultant (ABAP RAP, S/4HANA, OData, Fiori)',
-    'Strong background in RESTful/GraphQL APIs, microservices, and Docker containers',
-    'Passionate about performance optimization, micro-interactions, and accessibility',
-  ];
-
   return (
     <section id="about" className="py-24 bg-[#0B0B12] relative overflow-hidden">
       {/* Background ambient lighting */}
@@ -79,7 +71,7 @@ export const About: React.FC<AboutProps> = ({ siteSettings }) => {
             <div className="pt-2">
               <h3 className="text-white text-lg font-semibold mb-4 flex items-center gap-2">
                 <Award className="w-5 h-5 text-[#7C3AED]" />
-                Key Professional Highlights
+                What I Offer
               </h3>
               <motion.div
                 variants={staggerContainer}
@@ -88,16 +80,22 @@ export const About: React.FC<AboutProps> = ({ siteSettings }) => {
                 viewport={{ once: true }}
                 className="space-y-3"
               >
-                {highlights.map((highlight, index) => (
-                  <motion.div
-                    key={index}
-                    variants={fadeIn('up', index * 0.1)}
-                    className="flex items-start gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-[#7C3AED]/40 transition-colors"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-[#7C3AED] shrink-0 mt-0.5" />
-                    <span className="text-sm text-white/90 font-medium">{highlight}</span>
-                  </motion.div>
-                ))}
+                {siteSettings.services && siteSettings.services.length > 0 && (
+                  <>
+                    {siteSettings.services.map((service, index) => (
+                      <motion.div
+                        key={index}
+                        variants={fadeIn('up', index * 0.1)}
+                        className="flex items-start gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-[#7C3AED]/40 transition-colors"
+                      >
+                        <CheckCircle2 className="w-5 h-5 text-[#7C3AED] shrink-0 mt-0.5" />
+                        <span className="text-sm text-white/90 font-medium">
+                          {service}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </>
+                )}
               </motion.div>
             </div>
           </motion.div>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0B0B12" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111118"/>
+      <stop offset="100%" stop-color="#0B0B12"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+
+  <!-- Purple border accent -->
+  <rect width="64" height="64" rx="14" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-opacity="0.6"/>
+
+  <!-- Glow overlay -->
+  <rect width="64" height="64" rx="14" fill="url(#glow)"/>
+
+  <!-- "A" letter -->
+  <text
+    x="10"
+    y="46"
+    font-family="'Inter', 'Segoe UI', Arial, sans-serif"
+    font-size="34"
+    font-weight="800"
+    fill="white"
+    letter-spacing="-1"
+  >A</text>
+
+  <!-- "K" letter in purple -->
+  <text
+    x="34"
+    y="46"
+    font-family="'Inter', 'Segoe UI', Arial, sans-serif"
+    font-size="34"
+    font-weight="800"
+    fill="#7C3AED"
+    letter-spacing="-1"
+  >K</text>
+</svg>
