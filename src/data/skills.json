@@ -2,7 +2,7 @@
   {
     "id": "sap",
     "category": "SAP Development",
-    "description": "Developing enterprise applications using SAP ABAP and SAP S/4HANA with custom reports, Module Pool Programming, ALV Reports, Smart Forms, and database objects.",
+    "description": "Developing enterprise applications using SAP ABAP and SAP S/4HANA with custom reports, Module Pool Programming, ALV Reports, and database objects.",
     "skills": [
       {
         "name": "SAP ABAP",
@@ -38,39 +38,9 @@
         "experience": "1+ year"
       },
       {
-        "name": "Smart Forms",
-        "icon": "FileText",
-        "level": 82,
-        "experience": "1 year"
-      },
-      {
         "name": "Function Modules",
         "icon": "Boxes",
         "level": 88,
-        "experience": "1+ year"
-      },
-      {
-        "name": "Search Helps",
-        "icon": "Search",
-        "level": 85,
-        "experience": "1+ year"
-      },
-      {
-        "name": "Lock Objects",
-        "icon": "Lock",
-        "level": 82,
-        "experience": "1 year"
-      },
-      {
-        "name": "Screen Painter",
-        "icon": "Monitor",
-        "level": 88,
-        "experience": "1+ year"
-      },
-      {
-        "name": "Menu Painter",
-        "icon": "Menu",
-        "level": 85,
         "experience": "1+ year"
       },
       {
@@ -78,19 +48,13 @@
         "icon": "Bug",
         "level": 90,
         "experience": "1+ year"
-      },
-      {
-        "name": "SAP S/4HANA",
-        "icon": "HardDrive",
-        "level": 80,
-        "experience": "Working"
       }
     ]
   },
   {
     "id": "backend",
     "category": "Backend Development",
-    "description": "Building scalable backend applications, REST APIs, authentication systems, and server-side business logic.",
+    "description": "Building backend applications, REST APIs, authentication systems, and server-side business logic.",
     "skills": [
       {
         "name": "Node.js",
@@ -126,28 +90,17 @@
         "experience": "2 years"
       },
       {
-        "name": "Express Session",
-        "icon": "Lock",
-        "level": 86,
-        "experience": "2 years"
+        "name": "Middleware Development",
+        "icon": "Workflow",
+        "level": 88,
+        "experience": "2+ years"
       },
       {
-        "name": "Nodemailer",
-        "icon": "Mail",
-        "level": 84,
-        "experience": "2 years"
-      },
-      {
-        "name": "Multer",
-        "icon": "Upload",
-        "level": 84,
-        "experience": "2 years"
-      },
-      {
-        "name": "Cloudinary",
-        "icon": "Cloud",
-        "level": 82,
-        "experience": "1+ year"
+        "name": "Docker",
+        "icon": "Container",
+        "level": 78,
+        "experience": "Learning",
+        "featured": true
       }
     ]
   },
@@ -157,22 +110,22 @@
     "description": "Creating responsive and modern web interfaces with reusable components and clean UI design.",
     "skills": [
       {
-        "name": "HTML5",
-        "icon": "Globe",
-        "level": 95,
-        "experience": "3+ years",
-        "featured": true
-      },
-      {
-        "name": "CSS3",
-        "icon": "Palette",
-        "level": 92,
-        "experience": "3+ years",
-        "featured": true
-      },
-      {
         "name": "JavaScript (ES6+)",
         "icon": "Code",
+        "level": 90,
+        "experience": "2+ years",
+        "featured": true
+      },
+      {
+        "name": "Bootstrap",
+        "icon": "Layout",
+        "level": 95,
+        "experience": "2+ years",
+        "featured": true
+      },
+      {
+        "name": "EJS",
+        "icon": "FileCode",
         "level": 90,
         "experience": "2+ years",
         "featured": true
@@ -184,22 +137,10 @@
         "experience": "1+ year"
       },
       {
-        "name": "Bootstrap",
-        "icon": "Layout",
-        "level": 95,
-        "experience": "2+ years"
-      },
-      {
         "name": "Tailwind CSS",
         "icon": "Palette",
         "level": 84,
         "experience": "1+ year"
-      },
-      {
-        "name": "EJS",
-        "icon": "FileCode",
-        "level": 90,
-        "experience": "2+ years"
       }
     ]
   },
@@ -216,13 +157,13 @@
         "featured": true
       },
       {
-        "name": "Mongoose",
+        "name": "MySQL",
         "icon": "Database",
-        "level": 88,
-        "experience": "2 years"
+        "level": 82,
+        "experience": "1+ year"
       },
       {
-        "name": "MySQL",
+        "name": "PostgreSQL",
         "icon": "Database",
         "level": 82,
         "experience": "1+ year"
@@ -238,7 +179,7 @@
   {
     "id": "iot",
     "category": "IoT & Embedded Systems",
-    "description": "Developing IoT solutions using ESP32, Arduino, RFID technology, and embedded programming.",
+    "description": "Developing IoT and embedded solutions using microcontrollers and single-board computers.",
     "skills": [
       {
         "name": "ESP32",
@@ -251,26 +192,21 @@
         "name": "Arduino",
         "icon": "Microchip",
         "level": 88,
-        "experience": "2 years"
+        "experience": "2 years",
+        "featured": true
       },
       {
-        "name": "RFID (MFRC522)",
-        "icon": "CreditCard",
-        "level": 90,
-        "experience": "1+ year"
-      },
-      {
-        "name": "Arduino IDE",
+        "name": "Raspberry Pi",
         "icon": "Code2",
-        "level": 88,
-        "experience": "2 years"
+        "level": 82,
+        "experience": "1+ year"
       }
     ]
   },
   {
     "id": "tools",
     "category": "Tools & Platforms",
-    "description": "Modern tools used for development, collaboration, testing, design, and deployment.",
+    "description": "Development, version control, API testing, design, and deployment tools.",
     "skills": [
       {
         "name": "Git",
@@ -294,22 +230,17 @@
         "featured": true
       },
       {
+        "name": "Postman",
+        "icon": "Send",
+        "level": 90,
+        "experience": "2 years",
+        "featured": true
+      },
+      {
         "name": "SAP GUI",
         "icon": "Monitor",
         "level": 90,
         "experience": "1+ year"
-      },
-      {
-        "name": "SAP ADT (Eclipse)",
-        "icon": "Code",
-        "level": 85,
-        "experience": "1+ year"
-      },
-      {
-        "name": "Postman",
-        "icon": "Send",
-        "level": 90,
-        "experience": "2 years"
       },
       {
         "name": "Figma",
@@ -322,12 +253,6 @@
         "icon": "Terminal",
         "level": 82,
         "experience": "2 years"
-      },
-      {
-        "name": "npm",
-        "icon": "Package",
-        "level": 90,
-        "experience": "2+ years"
       }
     ]
   }
