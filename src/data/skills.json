@@ -42,12 +42,6 @@
         "icon": "Boxes",
         "level": 88,
         "experience": "1+ year"
-      },
-      {
-        "name": "Debugging",
-        "icon": "Bug",
-        "level": 90,
-        "experience": "1+ year"
       }
     ]
   },
@@ -90,24 +84,23 @@
         "experience": "2 years"
       },
       {
-        "name": "Middleware Development",
-        "icon": "Workflow",
-        "level": 88,
-        "experience": "2+ years"
+        "name": "Nodemailer",
+        "icon": "Mail",
+        "level": 84,
+        "experience": "2 years"
       },
       {
         "name": "Docker",
         "icon": "Container",
         "level": 78,
-        "experience": "Learning",
-        "featured": true
+        "experience": "Learning"
       }
     ]
   },
   {
     "id": "frontend",
     "category": "Frontend Development",
-    "description": "Creating responsive and modern web interfaces with reusable components and clean UI design.",
+    "description": "Creating responsive web interfaces using JavaScript, Bootstrap, EJS, and modern frontend technologies.",
     "skills": [
       {
         "name": "JavaScript (ES6+)",
@@ -135,19 +128,13 @@
         "icon": "Atom",
         "level": 82,
         "experience": "1+ year"
-      },
-      {
-        "name": "Tailwind CSS",
-        "icon": "Palette",
-        "level": 84,
-        "experience": "1+ year"
       }
     ]
   },
   {
     "id": "database",
     "category": "Database",
-    "description": "Working with relational and NoSQL databases for web and enterprise applications.",
+    "description": "Working with NoSQL and relational databases for web and enterprise applications.",
     "skills": [
       {
         "name": "MongoDB",
@@ -155,6 +142,12 @@
         "level": 90,
         "experience": "2+ years",
         "featured": true
+      },
+      {
+        "name": "Mongoose",
+        "icon": "Database",
+        "level": 88,
+        "experience": "2 years"
       },
       {
         "name": "MySQL",
@@ -167,12 +160,6 @@
         "icon": "Database",
         "level": 82,
         "experience": "1+ year"
-      },
-      {
-        "name": "SAP HANA",
-        "icon": "HardDrive",
-        "level": 75,
-        "experience": "Exposure"
       }
     ]
   },
@@ -206,7 +193,7 @@
   {
     "id": "tools",
     "category": "Tools & Platforms",
-    "description": "Development, version control, API testing, design, and deployment tools.",
+    "description": "Development, version control, API testing, design, and development environment tools.",
     "skills": [
       {
         "name": "Git",
@@ -243,16 +230,16 @@
         "experience": "1+ year"
       },
       {
-        "name": "Figma",
-        "icon": "Figma",
-        "level": 82,
-        "experience": "1+ year"
-      },
-      {
         "name": "Linux",
         "icon": "Terminal",
         "level": 82,
         "experience": "2 years"
+      },
+      {
+        "name": "Figma",
+        "icon": "Figma",
+        "level": 82,
+        "experience": "1+ year"
       }
     ]
   }

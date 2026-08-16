@@ -90,7 +90,7 @@ export const Contact: React.FC<ContactProps> = ({ siteSettings, socialLinks }) =
         <SectionHeader
           badgeText="Get In Touch"
           title="Let's Work Together"
-          subtitle="Available for select senior software engineering positions, SAP architecture advisory, or custom technical contracts."
+          subtitle="Available for Full-Time Opportunities, SAP ABAP Roles, and Freelance Projects."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">

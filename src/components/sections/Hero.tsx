@@ -174,8 +174,8 @@ export const Hero: React.FC<HeroProps> = ({ siteSettings }) => {
                   <Code2 className="w-4 h-4" />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-white">Full-Stack Architect</p>
-                  <p className="text-[10px] text-[#A1A1AA]">Next.js 15 & React 19</p>
+                  <p className="text-xs font-semibold text-white">Full-Stack Developer</p>
+                  <p className="text-[10px] text-[#A1A1AA]">MERN Stack</p>
                 </div>
               </motion.div>
 
@@ -190,8 +190,8 @@ export const Hero: React.FC<HeroProps> = ({ siteSettings }) => {
                   <Terminal className="w-4 h-4" />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-white">SAP S/4HANA</p>
-                  <p className="text-[10px] text-[#A1A1AA]">ABAP RAP & OData</p>
+                  <p className="text-xs font-semibold text-white">SAP ABAP Developer</p>
+                  <p className="text-[10px] text-[#A1A1AA]"></p>
                 </div>
               </motion.div>
             </motion.div>
