@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { contactFormConfig } from '@/config/contactForm';
 
 // Simple in-memory rate limiter (5 requests per 10 minutes per IP)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -58,7 +59,7 @@ export async function POST(request: Request) {
     if (botTrap && botTrap.trim() !== '') {
       return NextResponse.json({
         success: true,
-        message: 'Message processed successfully.',
+        message: "Thanks! Your message has been sent successfully. I'll get back to you soon.",
       });
     }
 
@@ -68,9 +69,9 @@ export async function POST(request: Request) {
     const cleanSubject = sanitizeInput(subject);
     const cleanMessage = sanitizeInput(message);
 
-    if (!cleanName || !cleanEmail || !cleanMessage) {
+    if (!cleanName || !cleanEmail || !cleanSubject || !cleanMessage) {
       return NextResponse.json(
-        { success: false, error: 'Name, email, and message are required fields.' },
+        { success: false, error: 'Name, email, subject, and message are all required fields.' },
         { status: 400 }
       );
     }
@@ -108,119 +109,54 @@ export async function POST(request: Request) {
       );
     }
 
-    // Determine domain / origin for serverless headers
-    const hostHeader = request.headers.get('host') || 'localhost:3000';
-    const originHeader =
-      request.headers.get('origin') ||
-      request.headers.get('referer') ||
-      `https://${hostHeader}`;
+    // 6. Check if Google Form Configuration is present
+    const { formUrl, fields } = contactFormConfig;
 
-    // 6. Check for Web3Forms provider key if set in environment variables
-    const web3Key = process.env.WEB3FORMS_ACCESS_KEY || process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
-
-    if (web3Key) {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: web3Key,
-          name: cleanName,
-          email: cleanEmail,
-          subject: cleanSubject || `New Portfolio Message from ${cleanName}`,
-          message: cleanMessage,
-          from_name: 'Portfolio Contact Form',
-        }),
-      });
-
-      const data = await response.json();
-      if (response.ok && data.success) {
-        return NextResponse.json({
-          success: true,
-          message: 'Message delivered successfully.',
-        });
-      } else {
-        return NextResponse.json(
-          {
-            success: false,
-            error: data.message || 'Web3Forms error occurred.',
-          },
-          { status: response.status || 400 }
-        );
-      }
-    }
-
-    // 7. FormSubmit Provider (Default Fallback)
-    const targetEmail = process.env.CONTACT_RECIPIENT_EMAIL || 'kbarjun2468@gmail.com';
-    const formSubmitUrl = `https://formsubmit.co/ajax/${targetEmail}`;
-
-    const response = await fetch(formSubmitUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-        'Referer': originHeader,
-        'Origin': originHeader,
-      },
-      body: JSON.stringify({
-        name: cleanName,
-        email: cleanEmail,
-        subject: cleanSubject || `New Portfolio Message from ${cleanName}`,
-        message: cleanMessage,
-        _subject: `[Portfolio Contact] ${cleanSubject || cleanName}`,
-        _template: 'table',
-        _captcha: 'false',
-      }),
-    });
-
-    let data: { success?: string | boolean; message?: string } = {};
-    try {
-      data = await response.json();
-    } catch {
-      data = {};
-    }
-
-    const isSuccess =
-      response.ok &&
-      (data.success === 'true' || data.success === true || data.message?.includes('submitted'));
-
-    if (isSuccess) {
-      return NextResponse.json({
-        success: true,
-        message: 'Message delivered successfully.',
-      });
-    }
-
-    const rawMsg = data.message || '';
-    if (
-      rawMsg.toLowerCase().includes('activate') ||
-      rawMsg.toLowerCase().includes('confirm') ||
-      !response.ok
-    ) {
+    if (!formUrl || formUrl.includes('FORM_ID')) {
       return NextResponse.json(
         {
           success: false,
-          error:
-            'FormSubmit requires a one-time activation for your Vercel domain. Please check your email inbox (kbarjun2468@gmail.com) for the FormSubmit activation email and click Activate.',
+          error: 'Google Form is not configured yet. Please set your Google Form URL in src/config/contactForm.ts.',
         },
-        { status: 400 }
+        { status: 500 }
       );
+    }
+
+    // Build URL-encoded form payload with Google Form entry mapping
+    const formData = new URLSearchParams();
+    formData.append(fields.name, cleanName);
+    formData.append(fields.email, cleanEmail);
+    formData.append(fields.subject, cleanSubject);
+    formData.append(fields.message, cleanMessage);
+
+    // Post data directly to Google Forms endpoint
+    const gfResponse = await fetch(formUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: formData.toString(),
+    });
+
+    // Google Forms returns 200 OK or 302 Redirect upon successful form response submission
+    if (gfResponse.ok || gfResponse.status === 200 || gfResponse.status === 302) {
+      return NextResponse.json({
+        success: true,
+        message: "Thanks! Your message has been sent successfully. I'll get back to you soon.",
+      });
     }
 
     return NextResponse.json(
       {
         success: false,
-        error: rawMsg || 'Failed to deliver message via email provider. Please try sending directly.',
+        error: 'Failed to submit response to Google Form. Please try again later.',
       },
-      { status: 400 }
+      { status: 500 }
     );
   } catch (error) {
-    console.error('Secure Contact API Error:', error);
+    console.error('Google Form Submission API Error:', error);
     return NextResponse.json(
-      { success: false, error: 'An error occurred while dispatching your message safely.' },
+      { success: false, error: 'An unexpected error occurred while sending your message.' },
       { status: 500 }
     );
   }

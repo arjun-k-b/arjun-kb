@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, Loader2, RotateCcw, Sparkles } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, Loader2, RotateCcw, Sparkles, ExternalLink, FileText } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, TwitterIcon, InstagramIcon, MediumIcon } from '@/components/ui/Icons';
 import { SiteSettings } from '@/types/site';
 import { SocialLink } from '@/types/social';
@@ -31,6 +31,26 @@ export const Contact: React.FC<ContactProps> = ({ siteSettings, socialLinks }) =
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Field Validation
+    const name = formState.name.trim();
+    const email = formState.email.trim();
+    const subject = formState.subject.trim();
+    const message = formState.message.trim();
+
+    if (!name || !email || !subject || !message) {
+      setStatus('error');
+      setStatusMessage('Name, email, subject, and message are all required fields.');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setStatus('error');
+      setStatusMessage('Please enter a valid email address.');
+      return;
+    }
+
     setStatus('loading');
     setStatusMessage(null);
 
@@ -40,25 +60,25 @@ export const Contact: React.FC<ContactProps> = ({ siteSettings, socialLinks }) =
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formState),
+        body: JSON.stringify({ name, email, subject, message, botTrap: formState.botTrap }),
       });
 
       const data = await response.json();
 
       if (response.ok && data.success) {
         setStatus('success');
-        setStatusMessage(data.message || 'Your message has been delivered successfully!');
+        setStatusMessage(
+          data.message || "Thanks! Your message has been sent successfully. I'll get back to you soon."
+        );
         setFormState({ name: '', email: '', subject: '', message: '', botTrap: '' });
       } else {
         setStatus('error');
-        setStatusMessage(data.error || 'Failed to send message. Please try again or email directly.');
+        setStatusMessage(data.error || 'Failed to submit response. Please try again.');
       }
     } catch (error) {
       console.error('Contact submission error:', error);
       setStatus('error');
-      setStatusMessage(
-        `Unable to reach the server. Please email directly at ${siteSettings.email}`
-      );
+      setStatusMessage('Unable to send message right now. Please try again later.');
     }
   };
 
@@ -198,12 +218,9 @@ export const Contact: React.FC<ContactProps> = ({ siteSettings, socialLinks }) =
                     <CheckCircle2 className="w-10 h-10 animate-bounce" />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-white">Message Delivered Successfully!</h3>
+                    <h3 className="text-2xl font-bold text-white">Message Sent!</h3>
                     <p className="text-sm text-emerald-400 font-medium">
-                      {statusMessage || 'Confirmation received from email server.'}
-                    </p>
-                    <p className="text-xs text-[#A1A1AA] max-w-md mx-auto">
-                      Thank you for reaching out. Your message has been logged, and I will review and reply within 24 hours.
+                      {statusMessage || "Thanks! Your message has been sent successfully. I'll get back to you soon."}
                     </p>
                   </div>
                   <div className="pt-2">

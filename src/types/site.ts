@@ -40,4 +40,6 @@ export interface SiteSettings {
     ogImage: string;
   };
   sections?: SiteSectionsVisibility;
+  googleFormUrl?: string;
+  googleScriptUrl?: string;
 }
