@@ -5,7 +5,7 @@
     "description": "Learn how HTTP status codes enable communication between browsers and servers. Explore the meaning of 1xx, 2xx, 3xx, 4xx, and 5xx responses with practical examples every web developer should know.",
     "content": "Every time a browser sends a request to a server, the server responds with an HTTP status code that describes the result of that request. These status codes are the foundation of web communication, helping developers understand whether a request was successful, redirected, invalid, or failed due to a server issue.\n\nThis article explains the five categories of HTTP status codes—Informational (1xx), Successful (2xx), Redirection (3xx), Client Errors (4xx), and Server Errors (5xx). You'll discover the purpose of commonly used codes such as 200 OK, 201 Created, 301 Moved Permanently, 302 Found, 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 500 Internal Server Error, and 503 Service Unavailable.\n\nUnderstanding these responses is essential for debugging applications, designing REST APIs, handling errors gracefully, improving user experience, and building reliable web applications. Whether you're a beginner or an experienced developer, mastering HTTP status codes will help you write better frontend and backend applications.",
     "thumbnail": "/images/blogs/blog_status_codes.svg",
-    "url": "https://medium.com/@arjun-kb/status-codes-the-secret-language-between-browsers-and-servers",
+    "url": "https://medium.com/@ARJUN_KB/status-codes-the-secret-language-between-browsers-and-servers-3d42f1133a3a",
     "date": "Jul 7, 2025",
     "category": "Web Development",
     "readTime": "3 min read",
@@ -30,7 +30,7 @@
     "description": "Understand the fundamentals of microservice architecture, why modern applications use it, and the benefits and challenges of building scalable distributed systems.",
     "content": "Microservices are a software architecture pattern where an application is divided into small, independent services, each responsible for a single business function. Unlike monolithic applications, every microservice can be developed, deployed, and scaled independently, making applications more flexible and easier to maintain.\n\nIn this article, we explore the core concepts of microservice architecture, understand why companies are adopting it, and discuss its advantages such as scalability, independent deployment, better team collaboration, and technology flexibility. We also cover the challenges that come with microservices, including service communication, distributed debugging, security, and DevOps complexity. By the end of this article, you'll have a solid foundation of what microservices are and why they have become the preferred architecture for modern cloud-native applications.",
     "thumbnail": "/images/blogs/blog_microservices.svg",
-    "url": "https://dev.to/arjun-kb/microservice-architecture-explained-1",
+    "url": "https://medium.com/@ARJUN_KB/microservice-architecture-explained-1-bde47be5a508",
     "date": "Jul 7, 2025",
     "category": "Microservices",
     "readTime": "3 min read",
@@ -55,7 +55,7 @@
     "description": "Learn the fundamentals of SAP ABAP, understand the SAP ecosystem, and discover why ABAP remains one of the most in-demand enterprise programming languages.",
     "content": "SAP ABAP (Advanced Business Application Programming) is the primary programming language used for developing applications within the SAP ecosystem. It enables developers to build reports, interfaces, forms, enhancements, and business applications that power some of the world's largest organizations. In this article, we introduce the basics of SAP ABAP, explore the SAP architecture, understand how ABAP interacts with business data, and discuss the skills every beginner should develop before writing their first program.",
     "thumbnail": "/images/blogs/blog_sap_abap_1.svg",
-    "url": "https://hashnode.com/@arjun-kb/sap-abap-made-simple-1",
+    "url": "https://medium.com/@ARJUN_KB/sap-abap-made-simple-a-practical-guide-for-developers-1-82dbdb7c4e91",
     "date": "Aug 12, 2026",
     "category": "SAP ABAP",
     "readTime": "2 min read",
@@ -78,7 +78,7 @@
     "description": "Explore the SAP ABAP development environment, understand SAP GUI, SAP Logon, the system landscape, clients, transaction codes, and the essential tools every ABAP developer should know.",
     "content": "Before writing our first line of ABAP code, it's important to understand the environment where SAP applications are developed. Unlike traditional programming languages, ABAP development takes place directly inside the SAP system, where programs, database objects, classes, screens, and other development artifacts are centrally managed. This article introduces the SAP Development Environment, explains the roles of SAP GUI and SAP Logon, and explores the SAP system landscape consisting of Development (DEV), Quality Assurance (QAS), and Production (PRD) systems. It also covers the concept of SAP Clients, Transaction Codes (T-Codes), and the essential development tools such as SE38, SE80, SE11, SE24, SE37, and SE93. By understanding these fundamentals, developers build a strong foundation before creating their first ABAP program.",
     "thumbnail": "/images/blogs/blog_sap_environment.svg",
-    "url": "https://medium.com/@arjun-kb/sap-abap-development-environment",
+    "url": "https://medium.com/@ARJUN_KB/sap-abap-made-simple-a-practical-guide-for-developers-1-2-c3a5ae084793",
     "date": "Aug 12, 2026",
     "category": "SAP ABAP",
     "readTime": "4 min read",
@@ -98,7 +98,7 @@
       "SE11",
       "T-Code"
     ],
-    "featured": false
+    "featured": true
   },
   {
     "id": "blog-5",
@@ -106,14 +106,14 @@
     "description": "Learn how to create, activate, and execute your first ABAP report program while understanding the basic syntax and development workflow.",
     "content": "Writing your first ABAP program is the first step toward SAP development. This tutorial explains how to create an executable report, understand the ABAP editor, activate objects, execute reports, and use basic statements such as WRITE, DATA, PARAMETERS, and COMMENTS. By the end of this guide, you'll be able to build and run your first SAP application while understanding the standard ABAP development process.",
     "thumbnail": "/images/blogs/blog_sap_abap_1_3.svg",
-    "url": "https://dev.to/arjun-kb/first-abap-report-program",
+    "url": "https://medium.com/@ARJUN_KB/sap-abap-made-simple-a-practical-guide-for-developers-1-3-5e4441425137",
     "date": "Aug 13, 2026",
     "category": "SAP ABAP",
     "readTime": "2 min read",
     "likes": 102,
     "author": {
       "name": "Arjun K B",
-      "avatar": "/images/hero-portrait.png"
+      "avatar": "/images/blog_sap_abap_1.svg"
     },
     "tags": [
       "SAP ABAP",
