@@ -22,8 +22,8 @@ export const About: React.FC<AboutProps> = ({ siteSettings }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badgeText="About Me"
-          title="Engineering Sleek & Scalable Systems"
-          subtitle="Discover my background, core engineering philosophy, and technical highlights."
+          title="Enterprise SAP ABAP & Modern Web Solutions"
+          subtitle="Building robust SAP applications, custom reports, and scalable web solutions."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

@@ -17,6 +17,7 @@ import { Projects } from '@/components/sections/Projects';
 import { Education } from '@/components/sections/Education';
 import { Certificates } from '@/components/sections/Certificates';
 import { Blog } from '@/components/sections/Blog';
+import { ResumeCta } from '@/components/sections/ResumeCta';
 import { Contact } from '@/components/sections/Contact';
 
 export default async function HomePage() {
@@ -55,6 +56,7 @@ export default async function HomePage() {
         {sections?.education !== false && <Education educationList={educationList} />}
         {sections?.certificates !== false && <Certificates certificates={certificates} />}
         {sections?.blog !== false && <Blog blogs={blogs} />}
+        <ResumeCta siteSettings={siteSettings} />
         {sections?.contact !== false && <Contact siteSettings={siteSettings} socialLinks={socialLinks} />}
       </main>
 

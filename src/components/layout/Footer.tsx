@@ -69,13 +69,11 @@ export const Footer: React.FC<FooterProps> = ({ siteSettings, socialLinks }) => 
             </h4>
             <ul className="space-y-2 text-xs">
               {[
-                { name: 'Hero', key: 'hero' },
+                { name: 'Home', key: 'hero' },
                 { name: 'About', key: 'about' },
                 { name: 'Skills', key: 'skills' },
                 { name: 'Experience', key: 'experience' },
                 { name: 'Projects', key: 'projects' },
-                { name: 'Education', key: 'education' },
-                { name: 'Certificates', key: 'certificates' },
                 { name: 'Blog', key: 'blog' },
                 { name: 'Contact', key: 'contact' },
               ]

@@ -7,24 +7,30 @@
     "location": "Kochi, Kerala, India",
     "type": "Full-time",
     "isCurrent": true,
-    "description": "Working as a SAP ABAP Developer Trainee, developing and maintaining custom SAP applications, reports, ALV reports, module pool programs, and database objects to support enterprise business processes.",
+    "description": "Developing enterprise SAP ABAP applications, Module Pool screens, ALV reports, and custom database solutions to support ship construction and administrative business requirements.",
     "highlights": [
-      "Developed custom ABAP reports and interactive ALV reports for business requirements.",
-      "Built Module Pool applications with custom screens, subscreens, tab strips, and user interactions.",
-      "Designed and maintained database tables, structures, search helps, and lock objects using the ABAP Dictionary.",
-      "Optimized Open SQL queries and implemented efficient data retrieval techniques.",
-      "Worked with internal tables, function modules, enhancements, and debugging to resolve production issues.",
-      "Collaborated with functional consultants to analyze business requirements and deliver SAP solutions."
+      "Developing SAP ABAP applications and custom business solutions.",
+      "Building Module Pool programs with custom screens, subscreens, and user dialog interfaces.",
+      "Creating interactive ALV reports with dynamic filters and data processing.",
+      "Designing custom database tables, structures, search helps, and lock objects using ABAP Dictionary.",
+      "Writing and optimizing Open SQL queries for high-performance database retrieval.",
+      "Developing Smart Forms for automated business document generation.",
+      "Debugging, performance optimization, testing, and troubleshooting SAP ABAP code.",
+      "Collaborating with functional consultants to analyze and support business requirements."
     ],
     "technologies": [
       "SAP ABAP",
-      "Open SQL",
       "Module Pool Programming",
       "ALV Reports",
       "ABAP Dictionary",
+      "Open SQL",
+      "Smart Forms",
+      "Search Helps",
+      "Lock Objects",
       "Function Modules",
+      "Debugging",
       "SAP GUI",
-      "SAP S/4HANA"
+      "S/4HANA"
     ]
   },
   {
@@ -35,40 +41,28 @@
     "location": "Kochi, Kerala, India",
     "type": "Training",
     "isCurrent": false,
-    "description": "Completed intensive hands-on training in full-stack web development, building scalable web applications using the MERN stack while following industry-standard development practices.",
+    "description": "Completed intensive hands-on training in full-stack web development, REST API engineering, and hardware integration using modern JavaScript ecosystems.",
     "highlights": [
-      "Developed full-stack web applications using Node.js, Express.js, MongoDB, EJS, HTML, CSS, and JavaScript.",
-      "Built an RFID-based Attendance Management System integrating ESP32 hardware with a Node.js backend and MongoDB.",
-      "Implemented user authentication, session management, CRUD operations, and RESTful APIs.",
-      "Worked with Git and GitHub for version control, collaborative development, and project management.",
-      "Applied MVC architecture, responsive UI design, and database optimization techniques in multiple projects."
+      "Developed full-stack web applications using Node.js, Express.js, MongoDB, JavaScript, and Bootstrap.",
+      "Built an RFID-based Attendance Management System integrating ESP32 microcontrollers with a web backend.",
+      "Implemented RESTful API endpoints, user authentication (JWT/Sessions), and database CRUD operations.",
+      "Managed source control and collaborative development workflows using Git and GitHub.",
+      "Applied MVC architecture, input sanitization, and database query optimizations."
     ],
     "technologies": [
       "JavaScript",
+      "React",
       "Node.js",
       "Express.js",
       "MongoDB",
-      "Mongoose",
-      "HTML5",
-      "CSS3",
-      "Bootstrap",
-      "EJS",
-      "REST API",
-      "JWT Authentication",
-      "Express Session",
-      "MVC Architecture",
+      "REST APIs",
+      "PostgreSQL",
+      "ESP32",
       "Git",
       "GitHub",
-      "Nodemailer",
-      "Multer",
-      "Cloudinary",
-      "ESP32",
-      "RFID (MFRC522)",
-      "Arduino IDE",
-      "JSON",
       "Postman",
       "VS Code",
-      "npm"
+      "Docker"
     ]
   }
 ]

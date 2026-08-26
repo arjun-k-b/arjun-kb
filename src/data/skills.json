@@ -1,246 +1,159 @@
 [
   {
-    "id": "sap",
-    "category": "SAP Development",
-    "description": "Developing enterprise applications using SAP ABAP and SAP S/4HANA with custom reports, Module Pool Programming, ALV Reports, and database objects.",
+    "id": "sap-abap",
+    "category": "SAP ABAP",
+    "description": "Primary enterprise specialization: building custom reports, Module Pool interfaces, database objects, and S/4HANA solutions.",
     "skills": [
       {
-        "name": "SAP ABAP",
+        "name": "ABAP",
         "icon": "Workflow",
-        "level": 92,
-        "experience": "1+ year",
-        "featured": true
-      },
-      {
-        "name": "Module Pool Programming",
-        "icon": "Layout",
-        "level": 90,
-        "experience": "1+ year",
         "featured": true
       },
       {
         "name": "ALV Reports",
         "icon": "Table",
-        "level": 90,
-        "experience": "1+ year",
+        "featured": true
+      },
+      {
+        "name": "Module Pool Programming",
+        "icon": "Layout",
         "featured": true
       },
       {
         "name": "Open SQL",
         "icon": "Database",
-        "level": 90,
-        "experience": "1+ year"
+        "featured": true
       },
       {
         "name": "ABAP Dictionary",
         "icon": "BookOpen",
-        "level": 88,
-        "experience": "1+ year"
+        "featured": true
+      },
+      {
+        "name": "Smart Forms",
+        "icon": "FileText",
+        "featured": true
       },
       {
         "name": "Function Modules",
         "icon": "Boxes",
-        "level": 85,
-        "experience": "1+ year"
-      }
-    ]
-  },
-  {
-    "id": "backend",
-    "category": "Backend Development",
-    "description": "Building backend applications, REST APIs, authentication systems, and server-side business logic.",
-    "skills": [
-      {
-        "name": "Node.js",
-        "icon": "Server",
-        "level": 97,
-        "experience": "2+ years",
         "featured": true
       },
       {
-        "name": "Express.js",
-        "icon": "Box",
-        "level": 92,
-        "experience": "2+ years",
-        "featured": true
-      },
-      {
-        "name": "REST API Development",
-        "icon": "Network",
-        "level": 95,
-        "experience": "2+ years",
-        "featured": true
-      },
-      {
-        "name": "MVC Architecture",
-        "icon": "Layers",
-        "level": 98,
-        "experience": "2+ years"
-      },
-      {
-        "name": "JWT Authentication",
-        "icon": "Shield",
-        "level": 86,
-        "experience": "2 years"
-      },
-      {
-        "name": "Nodemailer",
-        "icon": "Mail",
-        "level": 84,
-        "experience": "2 years"
-      },
-      {
-        "name": "Docker",
-        "icon": "Container",
-        "level": 74,
-        "experience": "Learning"
-      }
-    ]
-  },
-  {
-    "id": "frontend",
-    "category": "Frontend Development",
-    "description": "Creating responsive web interfaces using JavaScript, Bootstrap, EJS, and modern frontend technologies.",
-    "skills": [
-      {
-        "name": "JavaScript (ES6+)",
-        "icon": "Code",
-        "level": 98,
-        "experience": "2+ years",
-        "featured": true
-      },
-      {
-        "name": "Bootstrap",
-        "icon": "Layout",
-        "level": 95,
-        "experience": "2+ years",
-        "featured": true
-      },
-      {
-        "name": "EJS",
-        "icon": "FileCode",
-        "level": 90,
-        "experience": "2+ years",
-        "featured": true
-      },
-      {
-        "name": "React.js",
-        "icon": "Atom",
-        "level": 82,
-        "experience": "1+ year",
-        "featured": true
-      }
-    ]
-  },
-  {
-    "id": "database",
-    "category": "Database",
-    "description": "Working with NoSQL and relational databases for web and enterprise applications.",
-    "skills": [
-      {
-        "name": "MongoDB",
-        "icon": "Database",
-        "level": 90,
-        "experience": "2+ years",
-        "featured": true
-      },
-      {
-        "name": "Mongoose",
-        "icon": "Database",
-        "level": 88,
-        "experience": "2 years"
-      },
-      {
-        "name": "MySQL",
-        "icon": "Database",
-        "level": 82,
-        "experience": "1+ year"
-      },
-      {
-        "name": "PostgreSQL",
-        "icon": "Database",
-        "level": 75,
-        "experience": "1+ year"
-      }
-    ]
-  },
-  {
-    "id": "iot",
-    "category": "IoT & Embedded Systems",
-    "description": "Developing IoT and embedded solutions using microcontrollers and single-board computers.",
-    "skills": [
-      {
-        "name": "ESP32",
-        "icon": "Cpu",
-        "level": 90,
-        "experience": "1+ year",
-        "featured": true
-      },
-      {
-        "name": "Arduino",
-        "icon": "Microchip",
-        "level": 88,
-        "experience": "2 years",
-        "featured": true
-      },
-      {
-        "name": "Raspberry Pi",
-        "icon": "Code2",
-        "level": 82,
-        "experience": "1+ year"
-      }
-    ]
-  },
-  {
-    "id": "tools",
-    "category": "Tools & Platforms",
-    "description": "Development, version control, API testing, design, and development environment tools.",
-    "skills": [
-      {
-        "name": "Git",
-        "icon": "GitBranch",
-        "level": 92,
-        "experience": "2+ years",
-        "featured": true
-      },
-      {
-        "name": "GitHub",
-        "icon": "Github",
-        "level": 92,
-        "experience": "2+ years",
-        "featured": true
-      },
-      {
-        "name": "VS Code",
-        "icon": "Code2",
-        "level": 95,
-        "experience": "4+ years",
-        "featured": true
-      },
-      {
-        "name": "Postman",
-        "icon": "Send",
-        "level": 90,
-        "experience": "2 years",
+        "name": "Debugging",
+        "icon": "Terminal",
         "featured": true
       },
       {
         "name": "SAP GUI",
         "icon": "Monitor",
-        "level": 90,
-        "experience": "1+ year"
+        "featured": true
       },
       {
-        "name": "Linux",
-        "icon": "Terminal",
-        "level": 82,
-        "experience": "2 years"
+        "name": "S/4HANA",
+        "icon": "Layers",
+        "featured": true
+      }
+    ]
+  },
+  {
+    "id": "full-stack",
+    "category": "Full Stack",
+    "description": "Building modern web applications, REST APIs, and database-driven solutions.",
+    "skills": [
+      {
+        "name": "JavaScript",
+        "icon": "Code",
+        "featured": true
       },
       {
-        "name": "Figma",
-        "icon": "Figma",
-        "level": 82,
-        "experience": "1+ year"
+        "name": "React",
+        "icon": "Atom",
+        "featured": true
+      },
+      {
+        "name": "Node.js",
+        "icon": "Server",
+        "featured": true
+      },
+      {
+        "name": "Express.js",
+        "icon": "Box",
+        "featured": true
+      },
+      {
+        "name": "REST APIs",
+        "icon": "Network",
+        "featured": true
+      },
+      {
+        "name": "MongoDB",
+        "icon": "Database",
+        "featured": true
+      },
+      {
+        "name": "PostgreSQL",
+        "icon": "Database",
+        "featured": true
+      }
+    ]
+  },
+  {
+    "id": "tools",
+    "category": "Tools",
+    "description": "Development environments, version control systems, and API testing platforms.",
+    "skills": [
+      {
+        "name": "Git",
+        "icon": "GitBranch",
+        "featured": true
+      },
+      {
+        "name": "GitHub",
+        "icon": "Github",
+        "featured": true
+      },
+      {
+        "name": "Postman",
+        "icon": "Send",
+        "featured": true
+      },
+      {
+        "name": "VS Code",
+        "icon": "Code2",
+        "featured": true
+      },
+      {
+        "name": "SAP GUI",
+        "icon": "Monitor",
+        "featured": true
+      }
+    ]
+  },
+  {
+    "id": "additional-tech",
+    "category": "Additional Technologies",
+    "description": "Hardware microcontrollers, embedded platforms, and containerization.",
+    "skills": [
+      {
+        "name": "ESP32",
+        "icon": "Cpu",
+        "featured": true
+      },
+      {
+        "name": "Arduino",
+        "icon": "Microchip",
+        "featured": true
+      },
+      {
+        "name": "Raspberry Pi",
+        "icon": "Code2",
+        "featured": true
+      },
+      {
+        "name": "Docker",
+        "icon": "Container",
+        "featured": true
       }
     ]
   }

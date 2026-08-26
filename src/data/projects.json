@@ -2,28 +2,93 @@
   {
     "id": "proj-1",
     "title": "SAP Vigilance Clearance Management System",
-    "description": "Enterprise SAP ABAP application for managing vigilance clearance requests, approvals, tracking, and reporting.",
-    "longDescription": "Developed a SAP Module Pool application for managing vigilance clearance requests with role-based processing, request tracking, bulk operations, ALV reporting, approval workflows, custom database tables, and Open SQL.",
+    "description": "Enterprise SAP application for managing vigilance clearance requests, approvals, tracking and reporting.",
+    "longDescription": "Developed an enterprise SAP Module Pool application for vigilance clearance lifecycle processing. Built custom screens, subscreens, interactive ALV reports, approval workflows, database tables, and Smart Forms integration with Open SQL.",
     "image": "/images/projects/vigilance.png",
-    "category": "SAP",
+    "category": "SAP ABAP",
+    "role": "SAP ABAP Developer",
+    "keyFeatures": [
+      "Module Pool interactive screens & subscreens",
+      "Interactive ALV reports for tracking clearance status",
+      "Custom ABAP Dictionary database tables & lock objects",
+      "Business validations & approval workflow processing",
+      "Smart Forms generation for clearance documentation"
+    ],
     "technologies": [
-      "SAP ABAP",
+      "ABAP",
       "Module Pool",
-      "Open SQL",
       "ALV",
+      "Open SQL",
       "Smart Forms",
-      "SAP GUI"
+      "SAP Dictionary"
     ],
     "featured": true,
     "order": 1
   },
   {
     "id": "proj-2",
+    "title": "Medical Claim Report",
+    "description": "Interactive SAP ABAP ALV reporting solution for employee medical claim processing and status summaries.",
+    "longDescription": "Developed an interactive SAP ABAP ALV report featuring dynamic selection screen filters, claim version tracking, claim cost summaries, optimized Open SQL joins, and data export features.",
+    "image": "/images/projects/medical-report.png",
+    "category": "SAP ABAP",
+    "role": "SAP ABAP Developer",
+    "keyFeatures": [
+      "Dynamic selection screen input filters",
+      "Latest-version claim filtering & aggregation",
+      "Optimized Open SQL database queries & joins",
+      "Interactive ALV layout formatting & data export"
+    ],
+    "technologies": [
+      "SAP ABAP",
+      "Open SQL",
+      "ALV",
+      "ABAP Dictionary",
+      "SAP GUI"
+    ],
+    "featured": true,
+    "order": 2
+  },
+  {
+    "id": "proj-3",
+    "title": "ShopCraft - Microservices E-Commerce Platform",
+    "description": "Distributed e-commerce platform built with independent microservices and RESTful API communications.",
+    "longDescription": "Engineered an e-commerce architecture utilizing modular microservices for auth, catalog, orders, and notifications with Docker containerization and REST integrations.",
+    "image": "/images/projects/microservices.png",
+    "category": "Full Stack",
+    "role": "Full-Stack Developer",
+    "keyFeatures": [
+      "Independent microservice architecture",
+      "RESTful inter-service communication",
+      "Docker containerization",
+      "React & Redux Toolkit state management"
+    ],
+    "technologies": [
+      "Node.js",
+      "Express.js",
+      "REST API",
+      "MongoDB",
+      "Docker",
+      "React.js"
+    ],
+    "githubUrl": "https://github.com/arjun-k-b/ShopCraft-Microservices-E-Commerce-Platform",
+    "featured": true,
+    "order": 3
+  },
+  {
+    "id": "proj-4",
     "title": "DIYElectro - E-Commerce Platform",
-    "description": "Full-stack e-commerce platform for electronic components with customer and admin modules.",
-    "longDescription": "Built a complete e-commerce application with user authentication, OTP verification, product management, shopping cart, wishlist, order management, customer dashboard, and admin management features.",
+    "description": "Full-stack e-commerce web platform for electronic components with admin dashboard and order workflows.",
+    "longDescription": "Built a full-featured online store with user authentication, OTP verification, inventory controls, cart management, checkout flows, and administrator management dashboard.",
     "image": "/images/projects/diyelectro.png",
     "category": "Full Stack",
+    "role": "Full-Stack Developer",
+    "keyFeatures": [
+      "User authentication & OTP verification",
+      "Admin inventory & order management",
+      "Shopping cart & wishlist implementation",
+      "Responsive UI built with EJS & Bootstrap"
+    ],
     "technologies": [
       "Node.js",
       "Express.js",
@@ -33,52 +98,23 @@
       "JavaScript"
     ],
     "githubUrl": "https://github.com/arjun-k-b/DiyElectro",
-    "featured": true,
-    "order": 2
-  },
-  {
-    "id": "proj-3",
-    "title": "ShopCraft - Microservices E-Commerce Platform",
-    "description": "E-commerce platform built with independent backend services and REST-based communication.",
-    "longDescription": "Designed an e-commerce system using a microservices architecture with independent services for authentication, products, users, orders, and notifications. Implemented REST-based service communication and containerized services using Docker.",
-    "image": "/images/projects/microservices.png",
-    "category": "Backend",
-    "technologies": [
-      "Node.js",
-      "Express.js",
-      "REST API",
-      "MongoDB",
-      "Docker",
-      "React.js",
-      "Redux Toolkit"
-    ],
-    "githubUrl": "https://github.com/arjun-k-b/ShopCraft-Microservices-E-Commerce-Platform",
-    "featured": true,
-    "order": 3
-  },
-  {
-    "id": "proj-4",
-    "title": "Medical Claim Report",
-    "description": "SAP ABAP ALV reporting solution for employee medical claim processing.",
-    "longDescription": "Developed an interactive SAP ABAP ALV report with dynamic selection filters, latest-version claim selection, claim summaries, database joins, and optimized Open SQL queries for medical claim processing.",
-    "image": "/images/projects/medical-report.png",
-    "category": "SAP",
-    "technologies": [
-      "SAP ABAP",
-      "Open SQL",
-      "ALV",
-      "SAP HANA"
-    ],
     "featured": false,
     "order": 4
   },
   {
     "id": "proj-5",
     "title": "Employee Management System",
-    "description": "Web application for managing employee records with authentication, authorization, and CRUD operations.",
-    "longDescription": "Developed a role-based employee management application with authentication, authorization, profile management, employee CRUD operations, and REST API integration.",
+    "description": "Role-based web application for managing employee profiles, attendance records, and access permissions.",
+    "longDescription": "Created an employee management platform featuring secure JWT authentication, role-based authorization, complete CRUD operations for employee records, and REST API integration.",
     "image": "/images/projects/employee-management.png",
     "category": "Full Stack",
+    "role": "Full-Stack Developer",
+    "keyFeatures": [
+      "Role-based access control (RBAC)",
+      "Employee records CRUD operations",
+      "JWT authentication & session handling",
+      "REST API endpoints with MongoDB persistence"
+    ],
     "technologies": [
       "Node.js",
       "Express.js",
@@ -92,11 +128,43 @@
   },
   {
     "id": "proj-6",
-    "title": "3D Printer",
-    "description": "Custom embedded systems project for 3D printer control, monitoring, and automation.",
-    "longDescription": "Developed a custom 3D printer system involving printer control, temperature monitoring, serial communication, firmware configuration, and hardware integration using Arduino and Marlin firmware.",
+    "title": "ESP32 RFID Attendance System",
+    "description": "IoT attendance capture system combining ESP32 RFID card reader hardware with a web management dashboard.",
+    "longDescription": "Engineered an embedded RFID attendance logger using ESP32 hardware to capture card swipes and transmit attendance records to a Node.js backend and web dashboard.",
+    "image": "/images/projects/attendance.svg",
+    "category": "Embedded / IoT",
+    "role": "Embedded & Software Developer",
+    "keyFeatures": [
+      "MFRC522 RFID card scan capture",
+      "ESP32 Wi-Fi telemetry transmission",
+      "Web dashboard for real-time logs",
+      "MongoDB automated record logging"
+    ],
+    "technologies": [
+      "ESP32",
+      "RFID",
+      "Node.js",
+      "JavaScript",
+      "C++"
+    ],
+    "githubUrl": "https://github.com/arjun-k-b/attendance-System",
+    "featured": false,
+    "order": 6
+  },
+  {
+    "id": "proj-7",
+    "title": "3D Printer Control & Automation",
+    "description": "Embedded control system for custom 3D printer hardware, temperature regulation, and Marlin firmware tuning.",
+    "longDescription": "Developed and configured custom 3D printer hardware control routines, stepper motor timing, hotend/bed temperature sensing, and serial protocol communication via Marlin firmware on Arduino.",
     "image": "/images/projects/3d-printer.png",
-    "category": "Embedded Systems",
+    "category": "Embedded / IoT",
+    "role": "Hardware & Firmware Developer",
+    "keyFeatures": [
+      "Marlin firmware configuration & flashing",
+      "Real-time temperature feedback loop",
+      "Serial G-code command parser",
+      "Stepper motor movement calibration"
+    ],
     "technologies": [
       "Arduino",
       "C++",
@@ -104,24 +172,6 @@
       "Marlin Firmware"
     ],
     "featured": false,
-    "order": 6
-  },
-  {
-    "id": "proj-7",
-    "title": "ESP32 RFID Attendance System",
-    "description": "RFID-based attendance system using ESP32 with a web interface for managing attendance records.",
-    "longDescription": "Developed an RFID attendance system using ESP32 for card reading and attendance capture, with a web-based interface for viewing and managing attendance records.",
-    "image": "/images/projects/attendance.svg",
-    "category": "IoT",
-    "technologies": [
-      "ESP32",
-      "RFID",
-      "EJS",
-      "JavaScript",
-      "C++"
-    ],
-    "githubUrl": "https://github.com/arjun-k-b/attendance-System",
-    "featured": true,
     "order": 7
   }
 ]

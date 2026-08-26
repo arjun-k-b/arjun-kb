@@ -1,30 +1,30 @@
 {
   "name": "Arjun K B",
-  "role": "Full-Stack Developer & SAP ABAP Developer",
+  "role": "SAP ABAP Developer & Full-Stack Developer",
   "titles": [
-    "Full-Stack Developer",
-    "SAP ABAP Developer"
+    "SAP ABAP Developer",
+    "Full-Stack Developer"
   ],
-  "bio": "Full Stack Developer & SAP ABAP Developer passionate about building scalable web applications, enterprise solutions, and AI-powered experiences.",
+  "bio": "Building enterprise SAP applications and modern web solutions with ABAP, React, Node.js and modern development technologies.",
   "aboutBio": [
-    "I'm a passionate Full-Stack Developer and SAP ABAP Developer who enjoys building modern, scalable, and user-focused applications. I love turning ideas into meaningful digital experiences through clean code and thoughtful design.",
-    "My experience includes Next.js, React, TypeScript, Node.js, Express.js, MongoDB, PostgreSQL, and SAP ABAP. I enjoy bridging modern web technologies with enterprise solutions while continuously learning and exploring new technologies.",
-    "Beyond web development, I'm passionate about AI, automation, Raspberry Pi, and building innovative software that solves real-world problems with performance, simplicity, and great user experience."
+    "I am an SAP ABAP Developer experienced in building enterprise applications, interactive reports, workflows, and custom SAP solutions. My primary expertise includes Module Pool programming, ALV reporting, Open SQL queries, ABAP Dictionary design, and Smart Forms development.",
+    "I frequently collaborate with functional consultants to translate business requirements into efficient SAP solutions. Alongside my SAP expertise, I possess strong full-stack web development capabilities with React, Node.js, Express.js, MongoDB, and PostgreSQL.",
+    "I take pride in writing clean, optimized code, debugging complex business scenarios, and building practical technology solutions across enterprise SAP and modern web stacks."
   ],
   "services": [
-    "Full-Stack Web Development with Next.js, React & Node.js",
-    "SAP ABAP Development — ALV Reports, Module Pool & Workflow",
-    "RESTful API Design & Integration with MongoDB / PostgreSQL",
-    "Embedded systems projects with Raspberry Pi, ESP32 & Arduino",
-    "UI/UX implementation with modern design systems & animations"
+    "SAP ABAP Enterprise Development — Module Pool, ALV Reports & Smart Forms",
+    "Open SQL & ABAP Dictionary Table / Data Structure Design",
+    "Functional Collaboration, Debugging & Performance Optimization",
+    "Full-Stack Web Solutions with React, Node.js & REST APIs",
+    "Embedded Systems & Hardware Integration (ESP32, Arduino, Raspberry Pi)"
   ],
   "location": "Kerala, India",
   "email": "kbarjun2468@gmail.com",
   "phone": "+91 9037660610",
-  "availability": "Available for Freelance & Full-Time Opportunities",
-  "yearsOfExperience": 2,
-  "completedProjects": 11,
-  "codeQuality": 3,
+  "availability": "Available for Full-Time Opportunities & Freelance Projects",
+  "yearsOfExperience": 1,
+  "completedProjects": 7,
+  "codeQuality": 4,
   "satisfiedClients": 2,
   "githubUrl": "https://github.com/arjun-k-b",
   "linkedinUrl": "https://linkedin.com/in/arjun-kb",
@@ -32,25 +32,24 @@
   "aboutImage": "/images/hero-portrait.png",
   "resumePdf": "/resume/resume.pdf",
   "seo": {
-    "title": "Arjun K B | Full-Stack Developer & SAP ABAP Developer",
-    "description": "Portfolio of Arjun K B, a Full-Stack Developer and SAP ABAP Developer specializing in Next.js, React, TypeScript, Node.js, Express.js, MongoDB, PostgreSQL, and enterprise SAP solutions.",
+    "title": "Arjun K B | SAP ABAP Developer & Full-Stack Developer",
+    "description": "Portfolio of Arjun K B, an SAP ABAP Developer and Full-Stack Developer specializing in Module Pool programming, ALV reports, Open SQL, Smart Forms, React, Node.js, and modern web solutions.",
     "keywords": [
-      "Full-Stack Developer",
       "SAP ABAP Developer",
-      "Next.js",
+      "SAP ABAP",
+      "Module Pool",
+      "ALV Reports",
+      "Open SQL",
+      "ABAP Dictionary",
+      "Smart Forms",
+      "Full-Stack Developer",
       "React",
-      "TypeScript",
       "Node.js",
-      "Express.js",
-      "MongoDB",
-      "PostgreSQL",
       "JavaScript",
-      "Portfolio",
-      "Web Developer",
-      "AI Enthusiast"
+      "Portfolio"
     ],
     "author": "Arjun K B",
-    "siteUrl": "https://your-domain.com",
+    "siteUrl": "https://arjun-kb.vercel.app",
     "ogImage": "/images/hero-portrait.jpg"
   },
   "sections": {
@@ -64,5 +63,5 @@
     "blog": true,
     "contact": true
   },
-  "googleFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSc-google-form-id/viewform?embedded=true"
+  "googleFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSel8-_89b_2shiYDcc5wvC2eaVFbVUHr4qNJO1AVo9b1qhhSQ/formResponse"
 }

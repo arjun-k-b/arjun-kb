@@ -48,8 +48,8 @@ export const Hero: React.FC<HeroProps> = ({ siteSettings }) => {
               <span>{siteSettings.availability}</span>
             </div>
 
-            {/* Main Headline & Animated Developer Titles */}
-            <div className="space-y-2">
+            {/* Main Headline & Position */}
+            <div className="space-y-3">
               <h1 className="text-4xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-none">
                 Hi, I'm{' '}
                 <span className="bg-gradient-to-r from-white via-white to-[#7C3AED] bg-clip-text text-transparent">
@@ -57,25 +57,16 @@ export const Hero: React.FC<HeroProps> = ({ siteSettings }) => {
                 </span>
               </h1>
 
-              {/* Dynamic Title Switcher */}
-              <div className="h-12 sm:h-14 flex items-center">
-                <span className="text-xl sm:text-3xl font-semibold text-[#A1A1AA] mr-3">I am a</span>
-                <motion.span
-                  key={currentTitleIndex}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -15 }}
-                  transition={{ duration: 0.4 }}
-                  className="text-xl sm:text-3xl font-bold bg-gradient-to-r from-[#7C3AED] via-[#A78BFA] to-white bg-clip-text text-transparent"
-                >
-                  {siteSettings.titles[currentTitleIndex]}
-                </motion.span>
+              <div className="pt-1">
+                <p className="text-xl sm:text-3xl font-bold bg-gradient-to-r from-[#7C3AED] via-[#A78BFA] to-white bg-clip-text text-transparent">
+                  {siteSettings.role}
+                </p>
               </div>
             </div>
 
             {/* Intro Description */}
             <p className="text-[#A1A1AA] text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
-              {siteSettings.bio}
+              SAP ABAP developer experienced in building enterprise applications, reports, workflows and custom SAP solutions, with additional experience in modern full-stack and embedded development.
             </p>
 
             {/* Key Metrics Pill Grid */}
@@ -95,27 +86,27 @@ export const Hero: React.FC<HeroProps> = ({ siteSettings }) => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <Button
+                asAnchor
+                href={siteSettings.resumePdf}
+                download
+                variant="primary"
+                size="lg"
+                icon={<Download className="w-4 h-4" />}
+              >
+                View Resume
+              </Button>
+
               <Button
                 asAnchor
                 href="#projects"
-                variant="primary"
+                variant="secondary"
                 size="lg"
                 icon={<ArrowRight className="w-4 h-4" />}
                 iconPosition="right"
               >
                 View Projects
-              </Button>
-
-              <Button
-                asAnchor
-                href={siteSettings.resumePdf}
-                download
-                variant="secondary"
-                size="lg"
-                icon={<Download className="w-4 h-4" />}
-              >
-                Download Resume
               </Button>
 
               <Button
@@ -128,6 +119,27 @@ export const Hero: React.FC<HeroProps> = ({ siteSettings }) => {
               >
                 Contact Me
               </Button>
+
+              <div className="flex items-center gap-2 pl-2">
+                <a
+                  href={siteSettings.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Profile"
+                  className="p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-[#7C3AED] hover:border-[#7C3AED] text-[#A1A1AA] hover:text-white transition-all duration-300"
+                >
+                  <Code2 className="w-5 h-5" />
+                </a>
+                <a
+                  href={siteSettings.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Profile"
+                  className="p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-[#7C3AED] hover:border-[#7C3AED] text-[#A1A1AA] hover:text-white transition-all duration-300"
+                >
+                  <ArrowUpRight className="w-5 h-5" />
+                </a>
+              </div>
             </div>
           </motion.div>
 

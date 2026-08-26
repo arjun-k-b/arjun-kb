@@ -3,14 +3,13 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Star, Sparkles, Filter } from 'lucide-react';
+import { ExternalLink, Star, CheckCircle2, UserCheck } from 'lucide-react';
 import { GithubIcon } from '@/components/ui/Icons';
 import { Project, ProjectCategory } from '@/types/project';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
-import { fadeIn, staggerContainer } from '@/lib/framer';
 
 interface ProjectsProps {
   projects: Project[];
@@ -19,15 +18,18 @@ interface ProjectsProps {
 export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('All');
 
+  // Sorted projects by order
+  const sortedProjects = [...projects].sort((a, b) => a.order - b.order);
+
   const categories: ProjectCategory[] = [
     'All',
-    ...Array.from(new Set(projects.map((p) => p.category))),
+    ...Array.from(new Set(sortedProjects.map((p) => p.category))),
   ];
 
   const filteredProjects =
     activeCategory === 'All'
-      ? projects
-      : projects.filter((p) => p.category === activeCategory);
+      ? sortedProjects
+      : sortedProjects.filter((p) => p.category === activeCategory);
 
   return (
     <section id="projects" className="py-24 bg-[#0B0B12] relative overflow-hidden">
@@ -38,7 +40,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         <SectionHeader
           badgeText="Featured Work"
           title="Portfolio Projects"
-          subtitle="Explore recent production applications, SAP cloud integrations, open-source design systems, and enterprise systems."
+          subtitle="Explore enterprise SAP ABAP applications, full-stack web platforms, and embedded IoT solutions."
         />
 
         {/* Category Filter Tabs */}
@@ -73,7 +75,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
               >
-                <GlassCard className="h-full flex flex-col justify-between p-0 group overflow-hidden border border-white/10 hover:border-[#7C3AED]/60">
+                <GlassCard className="h-full flex flex-col justify-between p-0 group overflow-hidden border border-white/10 hover:border-[#7C3AED]/60 transition-all duration-300">
                   {/* Card Image Container */}
                   <div className="relative w-full h-52 overflow-hidden bg-black/40">
                     <Image
@@ -81,7 +83,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                       alt={project.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 400px"
-                      className="object-cover object-center group-hover:scale-110 transition-transform duration-700 filter brightness-90 contrast-105"
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-700 filter brightness-90 contrast-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#111118] via-transparent to-transparent opacity-80" />
 
@@ -90,7 +92,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                       <div className="absolute top-3 left-3 z-10">
                         <Badge variant="accent" size="sm" className="flex items-center gap-1 font-semibold">
                           <Star className="w-3 h-3 fill-[#7C3AED]" />
-                          Featured
+                          Top Project
                         </Badge>
                       </div>
                     )}
@@ -110,17 +112,43 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 
                   {/* Card Body */}
                   <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                    <div className="space-y-2">
-                      <h3 className="text-xl font-bold text-white group-hover:text-[#7C3AED] transition-colors">
-                        {project.title}
-                      </h3>
-                      <p className="text-xs sm:text-sm text-[#A1A1AA] line-clamp-3 leading-relaxed">
+                    <div className="space-y-3">
+                      <div className="space-y-1">
+                        <h3 className="text-xl font-bold text-white group-hover:text-[#7C3AED] transition-colors">
+                          {project.title}
+                        </h3>
+                        {project.role && (
+                          <div className="flex items-center gap-1.5 text-xs text-[#7C3AED] font-semibold">
+                            <UserCheck className="w-3.5 h-3.5" />
+                            <span>Role: {project.role}</span>
+                          </div>
+                        )}
+                      </div>
+
+                      <p className="text-xs sm:text-sm text-[#A1A1AA] leading-relaxed">
                         {project.description}
                       </p>
+
+                      {/* Key Features List */}
+                      {project.keyFeatures && project.keyFeatures.length > 0 && (
+                        <div className="pt-2 space-y-1.5 border-t border-white/10">
+                          <p className="text-[11px] font-semibold text-[#A1A1AA] uppercase tracking-wider">
+                            Key Features
+                          </p>
+                          <div className="space-y-1">
+                            {project.keyFeatures.slice(0, 4).map((feat, idx) => (
+                              <div key={idx} className="flex items-start gap-2 text-xs text-white/90">
+                                <CheckCircle2 className="w-3.5 h-3.5 text-[#7C3AED] shrink-0 mt-0.5" />
+                                <span className="line-clamp-1">{feat}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
 
                     {/* Tech Stack Pills */}
-                    <div className="flex flex-wrap gap-1.5 pt-2">
+                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/10">
                       {project.technologies.map((tech) => (
                         <Badge key={tech} variant="primary" size="sm">
                           {tech}
@@ -128,9 +156,9 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                       ))}
                     </div>
 
-                    {/* Card Footer Links - render only if links exist */}
+                    {/* Card Footer Links - ONLY render if actual link exists */}
                     {(project.githubUrl || project.liveUrl || project.url) && (
-                      <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
+                      <div className="pt-4 border-t border-white/10 flex items-center justify-start gap-3">
                         {project.githubUrl && (
                           <Button
                             asAnchor
@@ -140,7 +168,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                             size="sm"
                             icon={<GithubIcon className="w-4 h-4" />}
                           >
-                            Code
+                            GitHub
                           </Button>
                         )}
 
@@ -168,7 +196,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                             icon={<ExternalLink className="w-3.5 h-3.5" />}
                             iconPosition="right"
                           >
-                            Visit Link
+                            Live Demo
                           </Button>
                         )}
                       </div>

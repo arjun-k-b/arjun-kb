@@ -7,6 +7,8 @@ export interface Project {
   longDescription?: string;
   image: string;
   category: string;
+  role?: string;
+  keyFeatures?: string[];
   technologies: string[];
   githubUrl?: string;
   liveUrl?: string;
