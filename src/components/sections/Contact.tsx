@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Sparkles } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, Loader2, RotateCcw, Sparkles } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, TwitterIcon, InstagramIcon, MediumIcon } from '@/components/ui/Icons';
 import { SiteSettings } from '@/types/site';
 import { SocialLink } from '@/types/social';
@@ -16,6 +16,8 @@ interface ContactProps {
   socialLinks: SocialLink[];
 }
 
+type SubmissionStatus = 'idle' | 'loading' | 'success' | 'error';
+
 export const Contact: React.FC<ContactProps> = ({ siteSettings, socialLinks }) => {
   const [formState, setFormState] = useState({
     name: '',
@@ -24,14 +26,13 @@ export const Contact: React.FC<ContactProps> = ({ siteSettings, socialLinks }) =
     message: '',
     botTrap: '',
   });
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [status, setStatus] = useState<SubmissionStatus>('idle');
+  const [statusMessage, setStatusMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    setErrorMsg(null);
+    setStatus('loading');
+    setStatusMessage(null);
 
     try {
       const response = await fetch('/api/contact', {
@@ -45,18 +46,19 @@ export const Contact: React.FC<ContactProps> = ({ siteSettings, socialLinks }) =
       const data = await response.json();
 
       if (response.ok && data.success) {
-        setSubmitted(true);
+        setStatus('success');
+        setStatusMessage(data.message || 'Your message has been delivered successfully!');
         setFormState({ name: '', email: '', subject: '', message: '', botTrap: '' });
       } else {
-        setErrorMsg(data.error || 'Failed to send message. Please try again.');
+        setStatus('error');
+        setStatusMessage(data.error || 'Failed to send message. Please try again or email directly.');
       }
     } catch (error) {
       console.error('Contact submission error:', error);
-      // Fail-safe response for UI
-      setSubmitted(true);
-      setFormState({ name: '', email: '', subject: '', message: '', botTrap: '' });
-    } finally {
-      setLoading(false);
+      setStatus('error');
+      setStatusMessage(
+        `Unable to reach the server. Please email directly at ${siteSettings.email}`
+      );
     }
   };
 
@@ -185,24 +187,37 @@ export const Contact: React.FC<ContactProps> = ({ siteSettings, socialLinks }) =
             className="lg:col-span-7"
           >
             <GlassCard className="p-8">
-              {submitted ? (
-                <div className="text-center py-12 space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-8 h-8" />
+              {status === 'success' ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3 }}
+                  className="text-center py-12 space-y-6"
+                >
+                  <div className="w-20 h-20 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto shadow-lg shadow-emerald-500/10">
+                    <CheckCircle2 className="w-10 h-10 animate-bounce" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Message Sent Successfully!</h3>
-                  <p className="text-sm text-[#A1A1AA] max-w-md mx-auto">
-                    Thank you for reaching out. I have received your note and will get back to you within 24 hours.
-                  </p>
-                  <Button
-                    onClick={() => setSubmitted(false)}
-                    variant="outline"
-                    size="sm"
-                    className="mt-4"
-                  >
-                    Send Another Message
-                  </Button>
-                </div>
+                  <div className="space-y-2">
+                    <h3 className="text-2xl font-bold text-white">Message Delivered Successfully!</h3>
+                    <p className="text-sm text-emerald-400 font-medium">
+                      {statusMessage || 'Confirmation received from email server.'}
+                    </p>
+                    <p className="text-xs text-[#A1A1AA] max-w-md mx-auto">
+                      Thank you for reaching out. Your message has been logged, and I will review and reply within 24 hours.
+                    </p>
+                  </div>
+                  <div className="pt-2">
+                    <Button
+                      onClick={() => setStatus('idle')}
+                      variant="outline"
+                      size="sm"
+                      icon={<RotateCcw className="w-4 h-4" />}
+                      className="mx-auto"
+                    >
+                      Send Another Message
+                    </Button>
+                  </div>
+                </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Hidden Anti-Spam Honeypot Field */}
@@ -222,6 +237,40 @@ export const Contact: React.FC<ContactProps> = ({ siteSettings, socialLinks }) =
                     <p className="text-xs text-[#A1A1AA]">Fill out the form below to start a project conversation.</p>
                   </div>
 
+                  {status === 'error' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-4 rounded-xl bg-rose-500/15 border border-rose-500/40 text-rose-300 text-xs space-y-2 shadow-lg shadow-rose-950/40"
+                    >
+                      <div className="flex items-start gap-3">
+                        <AlertCircle className="w-5 h-5 text-rose-400 shrink-0 mt-0.5" />
+                        <div className="space-y-1">
+                          <p className="font-semibold text-rose-200">Message Delivery Failed</p>
+                          <p className="text-rose-300/90 leading-relaxed">{statusMessage}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3 pt-2 border-t border-rose-500/20">
+                        <button
+                          type="button"
+                          onClick={() => setStatus('idle')}
+                          className="text-xs text-rose-200 hover:text-white underline font-medium cursor-pointer"
+                        >
+                          Dismiss & Try Again
+                        </button>
+                        <span className="text-rose-400/50">•</span>
+                        <a
+                          href={`mailto:${siteSettings.email}?subject=${encodeURIComponent(
+                            formState.subject || 'Portfolio Inquiry'
+                          )}&body=${encodeURIComponent(formState.message)}`}
+                          className="text-xs text-rose-200 hover:text-white underline font-medium"
+                        >
+                          Email Directly ({siteSettings.email})
+                        </a>
+                      </div>
+                    </motion.div>
+                  )}
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="text-xs font-medium text-white/90">Your Name *</label>
@@ -230,7 +279,10 @@ export const Contact: React.FC<ContactProps> = ({ siteSettings, socialLinks }) =
                         required
                         placeholder="John Doe"
                         value={formState.name}
-                        onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                        onChange={(e) => {
+                          if (status === 'error') setStatus('idle');
+                          setFormState({ ...formState, name: e.target.value });
+                        }}
                         className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-[#A1A1AA]/50 text-sm focus:outline-none focus:border-[#7C3AED] focus:ring-1 focus:ring-[#7C3AED] transition-colors"
                       />
                     </div>
@@ -241,7 +293,10 @@ export const Contact: React.FC<ContactProps> = ({ siteSettings, socialLinks }) =
                         required
                         placeholder="john@example.com"
                         value={formState.email}
-                        onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                        onChange={(e) => {
+                          if (status === 'error') setStatus('idle');
+                          setFormState({ ...formState, email: e.target.value });
+                        }}
                         className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-[#A1A1AA]/50 text-sm focus:outline-none focus:border-[#7C3AED] focus:ring-1 focus:ring-[#7C3AED] transition-colors"
                       />
                     </div>
@@ -254,7 +309,10 @@ export const Contact: React.FC<ContactProps> = ({ siteSettings, socialLinks }) =
                       required
                       placeholder="Project Opportunity / Advisory Inquiry"
                       value={formState.subject}
-                      onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
+                      onChange={(e) => {
+                        if (status === 'error') setStatus('idle');
+                        setFormState({ ...formState, subject: e.target.value });
+                      }}
                       className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-[#A1A1AA]/50 text-sm focus:outline-none focus:border-[#7C3AED] focus:ring-1 focus:ring-[#7C3AED] transition-colors"
                     />
                   </div>
@@ -266,27 +324,30 @@ export const Contact: React.FC<ContactProps> = ({ siteSettings, socialLinks }) =
                       rows={5}
                       placeholder="Tell me about your project scope, timeline, or requirements..."
                       value={formState.message}
-                      onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+                      onChange={(e) => {
+                        if (status === 'error') setStatus('idle');
+                        setFormState({ ...formState, message: e.target.value });
+                      }}
                       className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-[#A1A1AA]/50 text-sm focus:outline-none focus:border-[#7C3AED] focus:ring-1 focus:ring-[#7C3AED] transition-colors resize-none"
                     />
                   </div>
 
-                  {errorMsg && (
-                    <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-medium">
-                      {errorMsg}
-                    </div>
-                  )}
-
                   <Button
                     type="submit"
-                    disabled={loading}
+                    disabled={status === 'loading'}
                     variant="primary"
                     size="lg"
                     className="w-full"
-                    icon={<Send className="w-4 h-4" />}
+                    icon={
+                      status === 'loading' ? (
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                      ) : (
+                        <Send className="w-4 h-4" />
+                      )
+                    }
                     iconPosition="right"
                   >
-                    {loading ? 'Sending Message...' : 'Send Message'}
+                    {status === 'loading' ? 'Sending Message...' : 'Send Message'}
                   </Button>
                 </form>
               )}

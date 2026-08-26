@@ -56,7 +56,6 @@ export async function POST(request: Request) {
 
     // 3. Anti-Spam Honeypot Check (If bot filled out hidden field, silently reject)
     if (botTrap && botTrap.trim() !== '') {
-      // Return fake success to confuse spam bots without sending email
       return NextResponse.json({
         success: true,
         message: 'Message processed successfully.',
@@ -109,10 +108,53 @@ export async function POST(request: Request) {
       );
     }
 
-    // 6. Secure Server-Side Recipient Email Loading
+    // Determine domain / origin for serverless headers
+    const hostHeader = request.headers.get('host') || 'localhost:3000';
+    const originHeader =
+      request.headers.get('origin') ||
+      request.headers.get('referer') ||
+      `https://${hostHeader}`;
+
+    // 6. Check for Web3Forms provider key if set in environment variables
+    const web3Key = process.env.WEB3FORMS_ACCESS_KEY || process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+
+    if (web3Key) {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: web3Key,
+          name: cleanName,
+          email: cleanEmail,
+          subject: cleanSubject || `New Portfolio Message from ${cleanName}`,
+          message: cleanMessage,
+          from_name: 'Portfolio Contact Form',
+        }),
+      });
+
+      const data = await response.json();
+      if (response.ok && data.success) {
+        return NextResponse.json({
+          success: true,
+          message: 'Message delivered successfully.',
+        });
+      } else {
+        return NextResponse.json(
+          {
+            success: false,
+            error: data.message || 'Web3Forms error occurred.',
+          },
+          { status: response.status || 400 }
+        );
+      }
+    }
+
+    // 7. FormSubmit Provider (Default Fallback)
     const targetEmail = process.env.CONTACT_RECIPIENT_EMAIL || 'kbarjun2468@gmail.com';
     const formSubmitUrl = `https://formsubmit.co/ajax/${targetEmail}`;
-    const originHeader = request.headers.get('referer') || 'http://localhost:3000';
 
     const response = await fetch(formSubmitUrl, {
       method: 'POST',
@@ -121,30 +163,60 @@ export async function POST(request: Request) {
         'Accept': 'application/json',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
         'Referer': originHeader,
+        'Origin': originHeader,
       },
       body: JSON.stringify({
         name: cleanName,
         email: cleanEmail,
         subject: cleanSubject || `New Portfolio Message from ${cleanName}`,
         message: cleanMessage,
-        _subject: `[Secure Contact] ${cleanSubject || cleanName}`,
+        _subject: `[Portfolio Contact] ${cleanSubject || cleanName}`,
         _template: 'table',
         _captcha: 'false',
       }),
     });
 
-    let data;
+    let data: { success?: string | boolean; message?: string } = {};
     try {
       data = await response.json();
     } catch {
-      data = { success: 'true', message: 'Message dispatched.' };
+      data = {};
     }
 
-    return NextResponse.json({
-      success: true,
-      message: 'Message delivered securely.',
-      data,
-    });
+    const isSuccess =
+      response.ok &&
+      (data.success === 'true' || data.success === true || data.message?.includes('submitted'));
+
+    if (isSuccess) {
+      return NextResponse.json({
+        success: true,
+        message: 'Message delivered successfully.',
+      });
+    }
+
+    const rawMsg = data.message || '';
+    if (
+      rawMsg.toLowerCase().includes('activate') ||
+      rawMsg.toLowerCase().includes('confirm') ||
+      !response.ok
+    ) {
+      return NextResponse.json(
+        {
+          success: false,
+          error:
+            'FormSubmit requires a one-time activation for your Vercel domain. Please check your email inbox (kbarjun2468@gmail.com) for the FormSubmit activation email and click Activate.',
+        },
+        { status: 400 }
+      );
+    }
+
+    return NextResponse.json(
+      {
+        success: false,
+        error: rawMsg || 'Failed to deliver message via email provider. Please try sending directly.',
+      },
+      { status: 400 }
+    );
   } catch (error) {
     console.error('Secure Contact API Error:', error);
     return NextResponse.json(
