@@ -13,7 +13,7 @@ export interface ButtonProps extends HTMLMotionProps<'button'> {
   asAnchor?: boolean;
   href?: string;
   target?: string;
-  download?: boolean;
+  download?: boolean | string;
 }
 
 export const Button: React.FC<ButtonProps> = ({

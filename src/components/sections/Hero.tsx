@@ -15,6 +15,8 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ siteSettings }) => {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+  const [resumeOpen, setResumeOpen] = useState(false);
+  const resumePickerRef = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,6 +24,16 @@ export const Hero: React.FC<HeroProps> = ({ siteSettings }) => {
     }, 3000);
     return () => clearInterval(interval);
   }, [siteSettings.titles]);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (resumePickerRef.current && !resumePickerRef.current.contains(e.target as Node)) {
+        setResumeOpen(false);
+      }
+    };
+    if (resumeOpen) document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [resumeOpen]);
 
   return (
     <section id="hero" className="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden bg-[#0B0B12]">
@@ -87,16 +99,72 @@ export const Hero: React.FC<HeroProps> = ({ siteSettings }) => {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              <Button
-                asAnchor
-                href={siteSettings.resumePdf}
-                download
-                variant="primary"
-                size="lg"
-                icon={<Download className="w-4 h-4" />}
-              >
-                View Resume
-              </Button>
+              {/* Resume Download Picker */}
+              <div className="relative" id="hero-resume-picker" ref={resumePickerRef}>
+                <Button
+                  variant="primary"
+                  size="lg"
+                  icon={<Download className="w-4 h-4" />}
+                  iconPosition="left"
+                  onClick={() => setResumeOpen((v) => !v)}
+                  aria-haspopup="true"
+                  aria-expanded={resumeOpen}
+                >
+                  View Resume
+                  <svg
+                    className={`w-3.5 h-3.5 ml-1 transition-transform duration-200 ${resumeOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </Button>
+
+                {resumeOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute left-0 mt-2 w-64 rounded-xl bg-[#111118] border border-[#7C3AED]/40 shadow-[0_8px_32px_rgba(0,0,0,0.6)] overflow-hidden z-50"
+                    role="menu"
+                  >
+                    <a
+                      href="/resume/arjun-kb-sap-abap-resume.pdf"
+                      download="arjun-kb-sap-abap-resume.pdf"
+                      role="menuitem"
+                      onClick={() => setResumeOpen(false)}
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-[#7C3AED]/15 transition-colors duration-200 group border-b border-white/5"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-[#7C3AED]/20 border border-[#7C3AED]/40 flex items-center justify-center text-[#A78BFA] shrink-0 group-hover:scale-110 transition-transform">
+                        <Download className="w-3.5 h-3.5" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold text-white">SAP ABAP Developer</p>
+                        <p className="text-[10px] text-[#A1A1AA]">SAP ABAP • S/4HANA</p>
+                      </div>
+                    </a>
+                    <a
+                      href="/resume/arjun-kb-fullstack-resume.pdf"
+                      download="arjun-kb-fullstack-resume.pdf"
+                      role="menuitem"
+                      onClick={() => setResumeOpen(false)}
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-[#0EA5E9]/10 transition-colors duration-200 group"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-[#0EA5E9]/20 border border-[#0EA5E9]/40 flex items-center justify-center text-[#38BDF8] shrink-0 group-hover:scale-110 transition-transform">
+                        <Download className="w-3.5 h-3.5" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold text-white">Full-Stack Developer</p>
+                        <p className="text-[10px] text-[#A1A1AA]">React • Next.js • Node.js</p>
+                      </div>
+                    </a>
+                  </motion.div>
+                )}
+              </div>
 
               <Button
                 asAnchor
