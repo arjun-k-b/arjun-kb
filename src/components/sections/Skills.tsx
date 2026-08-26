@@ -42,7 +42,7 @@ interface SkillsProps {
 }
 
 export const Skills: React.FC<SkillsProps> = ({ skillCategories }) => {
-  const [selectedCategory, setSelectedCategory] = useState<SkillCategoryName | 'All'>('All');
+  const [selectedCategory, setSelectedCategory] = useState<string>('Featured');
 
   const getIcon = (iconName: string) => {
     const icons: Record<string, React.ReactNode> = {
@@ -78,15 +78,26 @@ export const Skills: React.FC<SkillsProps> = ({ skillCategories }) => {
     return icons[iconName] || <Code className="w-5 h-5" />;
   };
 
-  const categoriesList: (SkillCategoryName | 'All')[] = [
+  const categoriesList: string[] = [
+    'Featured',
     'All',
     ...Array.from(new Set(skillCategories.map((c) => c.category))),
   ];
 
-  const filteredCategories =
-    selectedCategory === 'All'
-      ? skillCategories
-      : skillCategories.filter((c) => c.category === selectedCategory);
+  const filteredCategories = React.useMemo(() => {
+    if (selectedCategory === 'Featured') {
+      return skillCategories
+        .map((catGroup) => ({
+          ...catGroup,
+          skills: catGroup.skills.filter((s) => s.featured),
+        }))
+        .filter((catGroup) => catGroup.skills.length > 0);
+    }
+    if (selectedCategory === 'All') {
+      return skillCategories;
+    }
+    return skillCategories.filter((c) => c.category === selectedCategory);
+  }, [selectedCategory, skillCategories]);
 
   return (
     <section id="skills" className="py-24 bg-[#0B0B12] relative overflow-hidden">
@@ -145,35 +156,21 @@ export const Skills: React.FC<SkillsProps> = ({ skillCategories }) => {
                 viewport={{ once: true }}
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
               >
-                {catGroup.skills.map((skill, idx) => (
+                {catGroup.skills.map((skill) => (
                   <GlassCard
                     key={skill.name}
-                    className="p-5 flex flex-col justify-between group"
+                    className="p-4 flex items-center justify-between group hover:border-[#7C3AED]/50 transition-all duration-300"
                   >
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-[#7C3AED]/15 border border-[#7C3AED]/30 flex items-center justify-center text-[#7C3AED] group-hover:scale-110 transition-transform">
-                          {getIcon(skill.icon)}
-                        </div>
-                        <div>
-                          <h4 className="text-sm font-semibold text-white group-hover:text-[#7C3AED] transition-colors">
-                            {skill.name}
-                          </h4>
-                          <p className="text-[11px] text-[#A1A1AA]">{skill.experience}</p>
-                        </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-[#7C3AED]/15 border border-[#7C3AED]/30 flex items-center justify-center text-[#7C3AED] group-hover:scale-110 transition-transform shrink-0">
+                        {getIcon(skill.icon)}
                       </div>
-                      <span className="text-xs font-bold text-white/90">{skill.level}%</span>
-                    </div>
-
-                    {/* Animated Progress Bar */}
-                    <div className="w-full bg-white/5 rounded-full h-1.5 overflow-hidden border border-white/10">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: idx * 0.05 }}
-                        className="bg-gradient-to-r from-[#7C3AED] to-[#A78BFA] h-full rounded-full shadow-[0_0_10px_rgba(124,58,237,0.6)]"
-                      />
+                      <div>
+                        <h4 className="text-sm font-semibold text-white group-hover:text-[#7C3AED] transition-colors">
+                          {skill.name}
+                        </h4>
+                        <p className="text-xs text-[#A1A1AA]">{skill.experience}</p>
+                      </div>
                     </div>
                   </GlassCard>
                 ))}

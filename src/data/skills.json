@@ -127,7 +127,8 @@
         "name": "React.js",
         "icon": "Atom",
         "level": 82,
-        "experience": "1+ year"
+        "experience": "1+ year",
+        "featured": true
       }
     ]
   },
