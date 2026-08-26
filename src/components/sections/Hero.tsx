@@ -133,8 +133,9 @@ export const Hero: React.FC<HeroProps> = ({ siteSettings }) => {
                     role="menu"
                   >
                     <a
-                      href="/resume/arjun-kb-sap-abap-resume.pdf"
-                      download="arjun-kb-sap-abap-resume.pdf"
+                      href="https://drive.google.com/file/d/1QLD-f20jQEY07OsJ8Qe3GrCEDcGR0vLW/view?usp=drive_link"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       role="menuitem"
                       onClick={() => setResumeOpen(false)}
                       className="flex items-center gap-3 px-4 py-3 hover:bg-[#7C3AED]/15 transition-colors duration-200 group border-b border-white/5"
@@ -148,8 +149,9 @@ export const Hero: React.FC<HeroProps> = ({ siteSettings }) => {
                       </div>
                     </a>
                     <a
-                      href="/resume/arjun-kb-fullstack-resume.pdf"
-                      download="arjun-kb-fullstack-resume.pdf"
+                      href="https://drive.google.com/file/d/1xKCQWl_3136ThHAFB1Ik-zUx1iKtNcjF/view?usp=drive_link"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       role="menuitem"
                       onClick={() => setResumeOpen(false)}
                       className="flex items-center gap-3 px-4 py-3 hover:bg-[#0EA5E9]/10 transition-colors duration-200 group"
