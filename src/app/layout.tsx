@@ -20,6 +20,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const siteSettings = await getSiteSettings();
 
   return {
+    alternates: {
+    canonical: 'https://arjun-kb.vercel.app/',
+  },
     verification: {
     google: 'XzfVLHT5uMjpw1zJhSfdxSHWrFDBdDSrdrPV0G3SRi4',
   },
