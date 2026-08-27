@@ -3,6 +3,7 @@ import { Inter, Outfit } from 'next/font/google';
 import './globals.css';
 import { getSiteSettings } from '@/services/site.service';
 
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -15,12 +16,15 @@ const outfit = Outfit({
   display: 'swap',
 });
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {  
   const siteSettings = await getSiteSettings();
 
   return {
-    metadataBase: new URL(siteSettings.seo.siteUrl),
-    title: siteSettings.seo.title,
+    verification: {
+    google: 'XzfVLHT5uMjpw1zJhSfdxSHWrFDBdDSrdrPV0G3SRi4',
+  },
+
+  title: siteSettings.seo.title,
     description: siteSettings.seo.description,
     keywords: siteSettings.seo.keywords,
     authors: [{ name: siteSettings.seo.author }],
